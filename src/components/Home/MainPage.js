@@ -11,11 +11,7 @@ const MainPage = () => {
             <MainImg src="/images/body5.webp" alt="" />
           </div>
           <MainBtm>
-            <MainPageBtn
-              className="left-bottom"
-              type="button"
-              value="LET'S TALK              ➜"
-            />
+            <MainPageBtn>LET'S TALK ➜</MainPageBtn>
 
             <Context>
               an FrontEnd Web Developer based in Surat,Gujarat,India. Currently

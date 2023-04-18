@@ -47,7 +47,7 @@ const Workflow = () => {
 export default Workflow;
 
 const WorkFlowBody = styled.section`
-  background-color: rgb(250, 239, 239);
+  background-color: rgb(239, 239, 239);
 `;
 
 const BlackHeaderStyle = styled(HeaderStyle)`

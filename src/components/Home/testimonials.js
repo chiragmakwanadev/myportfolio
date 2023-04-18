@@ -31,7 +31,7 @@ const Testimonials = () => {
           </Footer>
         </Border>
         <Button>
-          <Butn className="left-bottom" type="button" value="VIEW ALL  ➜" />
+          <Butn>VIEW ALL ➜</Butn>
         </Button>
       </Bottom>
     </Testi>
@@ -41,7 +41,7 @@ const Testimonials = () => {
 export default Testimonials;
 
 const Testi = styled.section`
-  background-color: rgb(250, 239, 239);
+  background-color: rgb(250, 250, 250);
   padding-bottom: 200px;
 
   @media (max-width: 768px) {
@@ -79,12 +79,12 @@ const Bottom = styled.div`
   }
 `;
 const Border = styled.div`
-  border: 2px solid rgb(252, 222, 222);
+  border: 2px solid rgb(215, 215, 215);
   width: 40%;
   display: flex;
   margin: auto;
   flex-direction: column;
-  background-color: rgb(252, 222, 222);
+  background-color: rgb(215, 215, 215);
   padding: 40px;
 
   @media (max-width: 1336px) {
@@ -106,7 +106,7 @@ const Logo = styled.img`
 
 const Context = styled.div`
   font-size: 20px;
-  font-weight: lighter;
+  font-weight: 400;
   color: rgb(49, 49, 49);
   border-bottom: 1px solid rgb(117, 117, 117);
   line-height: 40px;
@@ -176,7 +176,7 @@ const Butn = styled(MainButn)`
   padding: 10px;
   font-size: 15px;
   width: 120px;
-  background-color: rgb(250, 239, 239);
+  background-color: rgb(250, 250, 250);
 
   @media (max-width: 768px) {
     font-size: 10px;

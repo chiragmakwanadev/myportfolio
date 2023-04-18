@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MainButn = styled.input`
+export const MainButn = styled.button`
   padding: 20px;
   font-size: 25px;
   align-items: flex-end;

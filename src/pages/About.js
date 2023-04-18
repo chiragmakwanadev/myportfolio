@@ -5,13 +5,7 @@ const About = () => {
     <div className="about-me">
       <div className="about-leftside">
         <div className="about-header">ABOUT ME</div>
-        <div className="about-caption">
-          coding
-          <br />
-          always
-          <br />
-          has meaning
-        </div>
+
         <div className="about-quote">
           Perfection is achieved not when there is nothing more to add, but
           rather when there is nothing more to take away.
@@ -30,7 +24,7 @@ const About = () => {
         </div>
       </div>
       <div className="about-rightside">
-        <img className="side-img1" src="images/side1.jpg" alt="" />
+        <img className="side-img1" src="" alt="" />
       </div>
     </div>
   );

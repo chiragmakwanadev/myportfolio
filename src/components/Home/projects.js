@@ -26,7 +26,7 @@ const Projects = () => {
             through the door.
           </Context2>
           <div>
-            <ProButn type="button" value="VIEW PROJECTS " />
+            <ProButn>VIEW PROJECT</ProButn>
           </div>
         </ProjectLeft>
         <Right>
@@ -47,7 +47,7 @@ export default Projects;
 const ProjectBody = styled.section`
   display: flex;
   margin: auto;
-  background-color: rgb(250, 239, 239);
+  background-color: rgb(239, 239, 239);
   flex-direction: column;
 `;
 
@@ -178,7 +178,7 @@ const Grid1 = styled.img`
 const ProButn = styled(MainButn)`
   font-size: 15px;
   width: 50%;
-  background-color: rgb(250, 239, 239);
+  background-color: rgb(239, 239, 239);
 
   @media (max-width: 1336px) {
     width: 130px;

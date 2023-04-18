@@ -35,7 +35,7 @@ const Whyme = () => {
 export default Whyme;
 
 const WhyMeBody = styled.section`
-  background-color: rgb(250, 227, 227);
+  background-color: rgb(250, 250, 250);
   display: flex;
   margin: auto;
   padding-top: 150px;
