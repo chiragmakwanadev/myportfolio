@@ -35,7 +35,7 @@ const Footer = () => {
           <Email>project@morsestudio.com</Email>
         </FooterBody>
         <FooterBottom>
-          <div>&copy 2021 All Rights Reserved</div>
+          <div> &#169; 2021 All Rights Reserved</div>
           <nav>
             <NavBar>
               <Link to="/">Home</Link>
