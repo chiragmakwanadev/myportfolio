@@ -82,12 +82,16 @@ const WhyContext = styled.div`
   letter-spacing: 3px;
   line-height: 35px;
 
+  @media (max-width: 1080px) {
+    font-size: 18px;
+  }
+
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   @media (max-width: 425px) {
-    font-size: 15px;
+    font-size: 13px;
     padding-top: 60px;
   }
 `;

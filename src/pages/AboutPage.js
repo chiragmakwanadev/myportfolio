@@ -27,11 +27,7 @@ const About = () => {
             voluptatem facere accusantium aliquid omnis quisquam illo nulla
             magnam, rerum, ipsum saepe! Animi alias odio porro incidunt
             molestias aliquam, earum eligendi laboriosam harum deleniti? Odio
-            laudantium enim doloribus sit labore laborum magnam, corporis culpa
-            adipisci dolore rem. Reprehenderit cum iure incidunt perspiciatis
-            provident sequi libero quae voluptatum odit sint perferendis ullam,
-            nam nesciunt? Delectus ipsam minus voluptatibus iusto tenetur
-            perferendis officia nostrum similique hic. Inventore!
+            laudantium enim doloribus!
           </Context>
         </AboutRight>
       </AboutBtm>
@@ -59,6 +55,10 @@ const AboutMain = styled.div`
   width: 100%;
   margin: auto;
   padding-bottom: 150px;
+
+  @media (max-width: 425px) {
+    padding-bottom: 70px;
+  }
 `;
 
 const AboutBody = styled.div`
@@ -72,6 +72,11 @@ const AboutIntro = styled.div`
   padding-top: 80px;
   letter-spacing: 5px;
   text-align: center;
+
+  @media (max-width: 425px) {
+    width: 90%;
+    font-weight: 200;
+  }
 `;
 
 const AboutHeader = styled(HeaderMain)`
@@ -81,40 +86,102 @@ const AboutHeader = styled(HeaderMain)`
 
 const AboutMainQuote = styled(MainQuote)`
   font-size: 150px;
+
+  @media (max-width: 1336px) {
+    font-size: 120px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 70px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 40px;
+  }
 `;
 const AboutBtm = styled.div`
   display: flex;
+  width: 100%;
   margin: auto;
   padding-top: 150px;
   padding-bottom: 40px;
+
+  @media (max-width: 425px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const AboutHeaderStyle = styled(HeaderStyle)`
   font-weight: 500;
   padding-bottom: 100px;
+
+  @media (max-width: 1080px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+    letter-spacing: 10px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 13px;
+    letter-spacing: 6px;
+  }
 `;
 
 const AboutRight = styled.div`
   width: 40%;
   margin: auto;
+
+  @media (max-width: 425px) {
+    width: 90%;
+  }
 `;
 
 const Context = styled.div`
   font-size: 20px;
   font-weight: 100;
   letter-spacing: 3px;
-  width: 80%;
+  width: 100%;
+
+  @media (max-width: 1336px) {
+    font-size: 17px;
+  }
+
+  @media (max-width: 1080px) {
+    font-size: 15px;
+    word-spacing: 4px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 15px;
+  }
 `;
 
 const AboutLeft = styled.div`
   width: 50%;
   display: flex;
+  margin: auto;
   img {
     width: 70%;
     height: 700px;
     margin: auto;
     object-fit: cover;
     border-radius: 20px;
+  }
+  @media (max-width: 425px) {
+    width: 90%;
+    margin-top: 50px;
+
+    img {
+      width: 90%;
+      height: 300px;
+    }
   }
 `;
 
@@ -131,6 +198,10 @@ const Head = styled.div`
   font-size: 17px;
   font-weight: 500;
   letter-spacing: 5px;
+
+  @media (max-width: 1080px) {
+    font-size: 15px;
+  }
 `;
 
 const Skills = styled.div`
@@ -141,5 +212,9 @@ const Skills = styled.div`
   padding-left: 10px;
   li {
     padding-bottom: 10px;
+  }
+
+  @media (max-width: 1080px) {
+    font-size: 12px;
   }
 `;

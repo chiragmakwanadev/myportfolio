@@ -25,7 +25,8 @@ export const HeaderMain = styled.div`
   padding: 60px;
   font-weight: 500;
   background-color: ${(props) =>
-    props.currentLocation === "/about" ? "#1B1B1B" : "white"};
+    (props.currentLocation === "/about" ? "#1B1B1B" : "white") ||
+    (props.currentLocation === "/Projects1" ? "#1B1B1B" : "white")};
   color: ${(props) =>
     props.currentLocation === "/about" ? "white" : "#1B1B1B"};
 
