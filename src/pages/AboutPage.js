@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { HeaderMain } from "../components/Layout/Header";
+
 import { HeaderStyle, MainQuote } from "../styles/commonStyle";
 
 const About = () => {
@@ -77,11 +77,6 @@ const AboutIntro = styled.div`
     width: 90%;
     font-weight: 200;
   }
-`;
-
-const AboutHeader = styled(HeaderMain)`
-  background-color: rgb(27, 27, 27);
-  color: white;
 `;
 
 const AboutMainQuote = styled(MainQuote)`
