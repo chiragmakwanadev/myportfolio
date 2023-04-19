@@ -16,7 +16,7 @@ const Projects1 = () => {
       </ProjectUpper>
       <ProjectBody1>
         <HeaderInfo>Heading info</HeaderInfo>
-        <ProImg src="../images/proimg.jpg" alt="" />
+        <ProImg src="../images/image2/proimg.jpg" alt="" />
         <Info>
           <InfoHead>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam,

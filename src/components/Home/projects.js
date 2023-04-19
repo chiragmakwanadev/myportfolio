@@ -31,10 +31,10 @@ const Projects = () => {
         </ProjectLeft>
         <Right>
           <Grid>
-            <Grid1 src="../images/project1.jpg" alt="" />
-            <img className="grid2" src="../images/project2.jpg" alt="" />
-            <img className="grid3" src="../images/project3.jpg" alt="" />
-            <img className="grid4" src="../images/project4.jpg" alt="" />
+            <Grid1 src="../images/image2/project1.jpg" alt="" />
+            <img className="grid2" src="../images/image2/project2.jpg" alt="" />
+            <img className="grid3" src="../images/image2/project3.jpg" alt="" />
+            <img className="grid4" src="../images/image2/project4.jpg" alt="" />
           </Grid>
         </Right>
       </Bottom>

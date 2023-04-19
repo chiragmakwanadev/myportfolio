@@ -15,7 +15,7 @@ const About = () => {
       </AboutBody>
       <AboutBtm>
         <AboutLeft>
-          <img src="../images/about1.jpg" alt="" />
+          <img src="../images/image2/about1.jpg" alt="" />
         </AboutLeft>
         <AboutRight>
           <AboutHeaderStyle>MY SPECIALTIES</AboutHeaderStyle>

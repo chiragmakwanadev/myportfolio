@@ -34,7 +34,7 @@ const Aboutme = () => {
       </AboutLeft>
 
       <AboutRight>
-        <SideImg src="images/side1.jpg" alt="" />
+        <SideImg src="images/image2/side1.jpg" alt="" />
       </AboutRight>
     </AboutBody>
   );

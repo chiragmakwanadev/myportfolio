@@ -8,7 +8,7 @@ const MainPage = () => {
       <HomeMain>
         <Body>
           <div>
-            <MainImg src="/images/body5.webp" alt="" />
+            <MainImg src="/images/image2/body5.jpg" alt="" />
           </div>
           <MainBtm>
             <MainPageBtn>LET'S TALK ➜</MainPageBtn>

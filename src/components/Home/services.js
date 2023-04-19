@@ -30,7 +30,7 @@ const Services = () => {
 
         <ServiceBtn>
           <ServiceLink2>
-            <img src="../images/logo101.png" alt="" />
+            <img src="../images/image2/logo101.png" alt="" />
           </ServiceLink2>
           <ServiceLink href="google.com">Projects ➜</ServiceLink>
         </ServiceBtn>
