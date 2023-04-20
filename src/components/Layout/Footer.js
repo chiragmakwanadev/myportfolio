@@ -11,20 +11,30 @@ const Footer = () => {
           <div>✻ MORSE'S STUDIO</div>
           <div>
             <div>follow me on:</div>
-            <Links>
-              <a href="google.com">
-                <img src="../images/insta.png" alt="" />
-              </a>
-              <a href="google.com">
-                <img src="../images/facebook.png" alt="" />
-              </a>
-              <a href="google.com">
-                <img src="../images/skype.png" alt="" />
-              </a>
-              <a href="google.com">
-                <img src="../images/youtube.png" alt="" />
-              </a>
-            </Links>
+            <NavLinks>
+              <ul>
+                <li>
+                  <a href="google.com">
+                    <img src="../images/insta.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="google.com">
+                    <img src="../images/facebook.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="google.com">
+                    <img src="../images/skype.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="google.com">
+                    <img src="../images/youtube.png" alt="" />
+                  </a>
+                </li>
+              </ul>
+            </NavLinks>
           </div>
         </Header>
         <FooterBody>
@@ -38,10 +48,17 @@ const Footer = () => {
           <div> &#169; 2021 All Rights Reserved</div>
           <nav>
             <NavBar>
-              <Link to="/">Home</Link>
-              <Link to="about">About Me</Link>
-
-              <Link to="projects">Project</Link>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="about">About Me</Link>
+                </li>
+                <li>
+                  <Link to="projects">Project</Link>
+                </li>
+              </ul>
             </NavBar>
           </nav>
         </FooterBottom>
@@ -68,10 +85,20 @@ const Header = styled.div`
   padding-top: 100px;
 `;
 
-const Links = styled.div`
+const NavLinks = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  li {
+    list-style: none;
+  }
 
   img {
     width: 30px;
@@ -133,6 +160,15 @@ const NavBar = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+  li {
+    list-style: none;
+  }
 
   a {
     text-decoration: none;

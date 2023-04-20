@@ -7,7 +7,7 @@ const About = () => {
   return (
     <AboutMain>
       <AboutBody>
-        <AboutMainQuote>ABOUT ME</AboutMainQuote>
+        <AboutMainQuote>About Me</AboutMainQuote>
         <AboutIntro>
           Perfection is achieved not when there is nothing more to add, but
           rather when there is nothing more to take away.
