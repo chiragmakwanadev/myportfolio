@@ -42,7 +42,7 @@ const Footer = () => {
             keep in touch with me <br />
             say hi!
           </FooterMainQuote>
-          <Email>project@morsestudio.com</Email>
+          <Email>chirag@aowstudio.dev</Email>
         </FooterBody>
         <FooterBottom>
           <div> &#169; 2021 All Rights Reserved</div>

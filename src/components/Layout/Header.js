@@ -64,13 +64,13 @@ export const HeaderMain = styled.div`
   justify-content: space-between;
   padding: 60px;
   font-weight: 500;
-  background-color: ${(props) =>
+  /* background-color: ${(props) =>
     (props.currentLocation === "/about" && "#1B1B1B") ||
-    (props.currentLocation === "/projects" && "#1B1B1B")};
+    (props.currentLocation === "/projects" && "#1B1B1B")}; */
+  background-color: ${(props) =>
+    props.currentLocation === "/" ? "white" : "#1B1B1B"};
 
-  color: ${(props) =>
-    (props.currentLocation === "/about" && "white") ||
-    (props.currentLocation === "/projects" && "white")};
+  color: ${(props) => (props.currentLocation === "/" ? "#1B1B1B" : "white")};
 
   @media (max-width: 768px) {
     padding: 30px;
@@ -117,24 +117,31 @@ const HamburgMenu = styled.div`
   ul {
     position: absolute;
     top: 100%;
-    right: 40px;
-    padding: 10px;
-    background-color: #1b1b1b;
+    right: 0px;
+    padding: 20px;
+    background: black;
+    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 2px white;
     z-index: 1;
     list-style: none;
     margin: 0;
-    width: 150px;
-    border-radius: 5px;
+    width: 170px;
+    border-radius: 20px;
 
     li {
-      padding: 10px;
+      padding: 20px;
 
       a {
         text-decoration: none;
-        font-weight: 100;
-        letter-spacing: 5px;
+        font-weight: 400;
+        letter-spacing: 7px;
         color: white;
+        text-align: center;
+
+        &:hover {
+          color: #814141;
+        }
       }
 
       &:last-child {
@@ -168,16 +175,13 @@ const HamburgerIcon = styled.button`
 
     &:first-child {
       transform-origin: top left;
-    }
-    &:last-child {
-      transform-origin: bottom left;
-    }
-    &:first-child {
       transform: ${({ isOpen }) => (isOpen ? "rotate(45deg)" : "none")};
     }
     &:last-child {
+      transform-origin: bottom left;
       transform: ${({ isOpen }) => (isOpen ? "rotate(-45deg)" : "none")};
     }
+
     &:nth-child(2) {
       opacity: ${({ isOpen }) => (isOpen ? "0" : "1")};
       transform: ${({ isOpen }) => (isOpen ? "translateX(20px)" : "none")};

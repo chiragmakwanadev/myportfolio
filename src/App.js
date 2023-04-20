@@ -4,6 +4,7 @@ import About from "./pages/AboutPage";
 import Home from "./pages/Home";
 import Projects1 from "./pages/ProjectsMain";
 import "./styles/style.css";
+import Nomatch from "./pages/nomatch";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="projects" element={<Projects1 />} />
+        <Route path="*" element={<Nomatch />} />
       </Routes>
     </Layout>
   );
