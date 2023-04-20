@@ -59,6 +59,10 @@ const BlackHeaderStyle = styled(HeaderStyle)`
   @media (max-width: 425px) {
     padding-top: 10px;
   }
+
+  @media (max-width: 325px) {
+    letter-spacing: 10px;
+  }
 `;
 
 const Upper = styled.div`

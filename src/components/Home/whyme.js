@@ -8,11 +8,12 @@ const Whyme = () => {
     <WhyMeBody>
       <WhyLeft>
         <BlackHeaderStyle>WHY ME?</BlackHeaderStyle>
-
-        <WhyMainQuote colorStyle="black">
-          make <br /> meaning <br /> in every <br />
-        </WhyMainQuote>
-        <WhyMainQuote colorStyle="red">Website made</WhyMainQuote>
+        <Flex>
+          <WhyMainQuote colorStyle="black">
+            make <br /> meaning <br /> in every <br />
+          </WhyMainQuote>
+          <WhyMainQuote colorStyle="red">Website made</WhyMainQuote>
+        </Flex>
       </WhyLeft>
       <WhyRight>
         <WhyImages>
@@ -128,6 +129,24 @@ const WhyImages = styled.div`
   @media (max-width: 1336px) {
     width: 80%;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: auto;
+    grid-template-rows: 1fr 2fr 1fr 2fr;
+    grid-template-columns: 1fr;
+    align-items: center;
+    align-content: center;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    margin: auto;
+    grid-template-rows: 1fr 2fr 1fr 2fr;
+    grid-template-columns: 1fr;
+    align-items: center;
+    align-content: center;
+  }
 `;
 
 const GoodImg = styled.img`
@@ -139,9 +158,28 @@ const GoodImg = styled.img`
   box-shadow: 0px 0px 5px 2px rgb(49, 49, 49);
   border-radius: 20px;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 250px;
+    grid-column: 1/2;
+    grid-row: 4/5;
+    justify-self: center;
+  }
+
   @media (max-width: 425px) {
     width: 150px;
     height: 150px;
+  }
+
+  @media (max-width: 375px) {
+    width: 120px;
+    height: 120px;
+  }
+
+  @media (max-width: 375px) {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    justify-self: center;
   }
 `;
 
@@ -154,9 +192,23 @@ const BadImg = styled.img`
   box-shadow: 0px 0px 5px 2px rgb(54, 54, 54);
   border-radius: 20px;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 250px;
+  }
+
   @media (max-width: 425px) {
-    width: 100px;
+    width: 150px;
     height: 150px;
+    justify-self: center;
+  }
+
+  @media (max-width: 375px) {
+    width: 120px;
+    height: 120px;
+    justify-self: center;
+    grid-column: 1/2;
+    grid-row: 2/3;
   }
 `;
 const Logo1 = styled.img`
@@ -185,14 +237,35 @@ const Logo2 = styled.img`
   opacity: calc(70%);
   justify-self: center;
 
+  @media (max-width: 768px) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
   @media (max-width: 425px) {
     width: 30px;
   }
+
+  @media (max-width: 375px) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+`;
+
+const Flex = styled.div`
+  display: flex;
+  width: 100%;
+  margin: auto;
+  flex-direction: column;
 `;
 
 const WhyMainQuote = styled(MainQuote)`
   @media (max-width: 425px) {
     margin-right: 0px;
     padding-top: 0px;
+  }
+
+  @media (max-width: 375px) {
+    width: 90%;
   }
 `;

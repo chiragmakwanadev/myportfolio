@@ -20,7 +20,7 @@ const Aboutme = () => {
           rather when there is nothing more to take away.
         </Context>
         <div>
-          <HeaderStyle>MY SPECIALTIES</HeaderStyle>
+          <AboutHeaderStyle>MY SPECIALTIES</AboutHeaderStyle>
           <Hashtags>
             <li>DEVELOPER</li>
             <li>GAMER</li>
@@ -124,6 +124,10 @@ const SideImg = styled.img`
     object-fit: cover;
     margin-top: 200px;
   }
+
+  @media (max-width: 425px) {
+    height: 300px;
+  }
 `;
 const Hashtags = styled.h2`
   list-style: none;
@@ -172,5 +176,11 @@ const Hashtags = styled.h2`
     li {
       padding: 6px;
     }
+  }
+`;
+
+const AboutHeaderStyle = styled(HeaderStyle)`
+  @media (max-width: 325px) {
+    letter-spacing: 9px;
   }
 `;

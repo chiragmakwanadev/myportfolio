@@ -128,7 +128,7 @@ const ProjectLeft = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
-  padding-top: 200px;
+  padding-top: 50px;
 
   @media (max-width: 1080px) {
     padding-top: 0px;

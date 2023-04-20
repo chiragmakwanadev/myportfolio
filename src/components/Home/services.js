@@ -81,6 +81,10 @@ const ServiceImg = styled.img`
   @media (max-width: 768px) {
     margin-bottom: -50px;
   }
+
+  @media (max-width: 425px) {
+    height: 300px;
+  }
 `;
 
 const ServiceRight = styled.div`
@@ -146,6 +150,13 @@ const ServiceBtn = styled.div`
   @media (max-width: 425px) {
     img {
       width: 20px;
+    }
+  }
+  @media (max-width: 375px) {
+    width: 100%;
+
+    img {
+      width: 15px;
     }
   }
 `;
