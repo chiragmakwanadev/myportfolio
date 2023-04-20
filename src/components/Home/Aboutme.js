@@ -143,7 +143,7 @@ const Hashtags = styled.h2`
   li {
     border: 1px solid white;
     border-radius: 40px;
-    padding: 25px;
+    padding: 15px;
   }
 
   @media (max-width: 1336px) {
