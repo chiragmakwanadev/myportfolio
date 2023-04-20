@@ -8,7 +8,7 @@ const MainPage = () => {
       <HomeMain>
         <Body>
           <div>
-            <MainImg src="/images/image2/body5.jpg" alt="" />
+            <MainImg src="/images/image2/mainbody2.jpg" alt="" />
           </div>
           <MainBtm>
             <MainPageBtn>LET'S TALK ➜</MainPageBtn>
@@ -57,6 +57,7 @@ const MainImg = styled.img`
   align-items: center;
   display: flex;
   object-fit: cover;
+  border-radius: 30px;
 
   @media (max-width: 1336px) {
     height: 500px;

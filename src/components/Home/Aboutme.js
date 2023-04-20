@@ -116,12 +116,13 @@ const SideImg = styled.img`
   margin: auto;
   object-fit: cover;
   margin-top: -140px;
+  border-radius: 30px;
 
   @media (max-width: 1336px) {
     width: 80%;
     height: 550px;
     object-fit: cover;
-    padding-top: 200px;
+    margin-top: 200px;
   }
 `;
 const Hashtags = styled.h2`

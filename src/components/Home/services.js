@@ -8,7 +8,7 @@ const Services = () => {
   return (
     <ServiceBody>
       <div>
-        <ServiceImg src="../images/side2.jpg" alt="" />
+        <ServiceImg src="../images/image2/side2.jpg" alt="" />
       </div>
       <ServiceRight>
         <MainQuote colorStyle="white">
@@ -30,7 +30,7 @@ const Services = () => {
 
         <ServiceBtn>
           <ServiceLink2>
-            <img src="../images/image2/logo101.png" alt="" />
+            <img src="../images/logo101.png" alt="" />
           </ServiceLink2>
           <ServiceLink href="google.com">Projects ➜</ServiceLink>
         </ServiceBtn>
@@ -64,17 +64,18 @@ const ServiceBody = styled.section`
 
 const ServiceImg = styled.img`
   width: 650px;
-  height: 1150px;
+  height: 1000px;
   display: flex;
   margin: auto;
   object-fit: cover;
-  padding-top: 110px;
+  margin-top: 110px;
+  border-radius: 30px;
 
   @media (max-width: 1336px) {
     width: 80%;
     height: 500px;
     object-fit: cover;
-    padding-top: 100px;
+    margin-top: 100px;
   }
 
   @media (max-width: 768px) {

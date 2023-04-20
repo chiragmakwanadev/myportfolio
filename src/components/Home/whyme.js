@@ -137,6 +137,7 @@ const GoodImg = styled.img`
   grid-row: 2/3;
   object-fit: cover;
   box-shadow: 0px 0px 5px 2px rgb(49, 49, 49);
+  border-radius: 20px;
 
   @media (max-width: 425px) {
     width: 150px;
@@ -151,6 +152,7 @@ const BadImg = styled.img`
   grid-column: 1/2;
   grid-row: 2/3;
   box-shadow: 0px 0px 5px 2px rgb(54, 54, 54);
+  border-radius: 20px;
 
   @media (max-width: 425px) {
     width: 100px;

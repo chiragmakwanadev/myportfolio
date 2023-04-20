@@ -28,7 +28,7 @@ const Projects1 = () => {
       <ProjectBody2>
         <ProBody2>
           <HeadInfo>Heading info</HeadInfo>
-          <ProImg2 src="../images/proimg2.jpg" alt="" />
+          <ProImg2 src="../images/image2/proimg2.jpg" alt="" />
           <ImgFooter>
             <ProInfo2>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. veritatis
@@ -39,7 +39,7 @@ const Projects1 = () => {
         </ProBody2>
         <ProBody2>
           <HeadInfo>Heading info</HeadInfo>
-          <ProImg2 src="../images/proimg3.jpg" alt="" />
+          <ProImg2 src="../images/image2/proimg3.jpg" alt="" />
           <ImgFooter>
             <ProInfo2>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. veritatis

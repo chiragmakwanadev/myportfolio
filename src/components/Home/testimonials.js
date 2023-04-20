@@ -86,6 +86,7 @@ const Border = styled.div`
   flex-direction: column;
   background-color: rgb(215, 215, 215);
   padding: 40px;
+  border-radius: 30px;
 
   @media (max-width: 1336px) {
     width: 70%;

@@ -159,6 +159,7 @@ const Grid = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 30px;
   }
 
   @media (max-width: 1080px) {
