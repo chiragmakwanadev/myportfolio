@@ -20,14 +20,22 @@ const About = () => {
         <AboutRight>
           <AboutHeaderStyle>MY SPECIALTIES</AboutHeaderStyle>
           <Context>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsa
-            perferendis error sunt repudiandae laborum eius sit libero dolore,
-            temporibus cum ipsam explicabo similique voluptatibus vero esse
-            fugit commodi quam minima blanditiis omnis? Aspernatur unde
-            voluptatem facere accusantium aliquid omnis quisquam illo nulla
-            magnam, rerum, ipsum saepe! Animi alias odio porro incidunt
-            molestias aliquam, earum eligendi laboriosam harum deleniti? Odio
-            laudantium enim doloribus!
+            Hey there, internet stranger! As a web developer with three years of
+            experience, I've spent more time staring at code than I have at the
+            sun (which may explain my pale complexion). But don't worry, my
+            pasty exterior belies the fact that I'm a web development wizard who
+            can create sites so stunning they'll make your eyes water. Of
+            course, there are some challenges to this gig. For one, clients who
+            want me to add a blinking rainbow background to their site (spoiler
+            alert: it's never a good idea). And let's not forget the endless
+            cups of coffee required to power me through long nights of
+            debugging. But hey, I wouldn't have it any other way. When I'm not
+            coding, you can find me at the local coffee shop, debating the
+            merits of Comic Sans with my fellow web development nerds. So if
+            you're looking for a web developer who's equal parts coding genius
+            and comedy gold, look no further. I'm your gal/guy/non-binary person
+            (because let's be inclusive, people), and I'm ready to make your
+            website sparkle. Let's make some magic happen on the web!
           </Context>
         </AboutRight>
       </AboutBtm>
@@ -101,7 +109,7 @@ const AboutBtm = styled.div`
   padding-top: 150px;
   padding-bottom: 40px;
 
-  @media (max-width: 425px) {
+  @media (max-width: 550px) {
     flex-direction: column-reverse;
   }
 `;
@@ -119,42 +127,46 @@ const AboutHeaderStyle = styled(HeaderStyle)`
     letter-spacing: 10px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 550px) {
     font-size: 13px;
     letter-spacing: 6px;
   }
 `;
 
 const AboutRight = styled.div`
-  width: 40%;
+  width: 30%;
   margin: auto;
 
-  @media (max-width: 425px) {
+  @media (max-width: 1080px) {
+    width: 40%;
+  }
+
+  @media (max-width: 550px) {
     width: 90%;
   }
 `;
 
 const Context = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 100;
   letter-spacing: 3px;
   width: 100%;
 
   @media (max-width: 1336px) {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   @media (max-width: 1080px) {
-    font-size: 15px;
+    font-size: 13px;
     word-spacing: 4px;
   }
 
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: 12px;
   }
 
-  @media (max-width: 425px) {
-    font-size: 15px;
+  @media (max-width: 550px) {
+    font-size: 12px;
   }
 `;
 
@@ -169,7 +181,7 @@ const AboutLeft = styled.div`
     object-fit: cover;
     border-radius: 20px;
   }
-  @media (max-width: 425px) {
+  @media (max-width: 550px) {
     width: 90%;
     margin-top: 50px;
 
