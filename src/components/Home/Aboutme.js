@@ -22,15 +22,13 @@ const Aboutme = () => {
         <div>
           <AboutHeaderStyle>MY SPECIALTIES</AboutHeaderStyle>
           <Hashtags>
-            <ul>
-              <li>DEVELOPER</li>
-              <li>GAMER</li>
-              <li>AUDIOPHILE</li>
-              <li>INTERIOR</li>
-              <li>SLACKER</li>
-              <li>FOOD</li>
-              <li>ARCHITECT</li>
-            </ul>
+            <li>DEVELOPER</li>
+            <li>GAMER</li>
+            <li>AUDIOPHILE</li>
+            <li>INTERIOR</li>
+            <li>SLACKER</li>
+            <li>FOOD</li>
+            <li>ARCHITECT</li>
           </Hashtags>
         </div>
       </AboutLeft>

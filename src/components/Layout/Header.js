@@ -72,8 +72,13 @@ export const HeaderMain = styled.div`
     (props.currentLocation === "/about" && "white") ||
     (props.currentLocation === "/projects" && "white")};
 
+  @media (max-width: 768px) {
+    padding: 30px;
+  }
+
   @media (max-width: 425px) {
     font-size: 13px;
+    padding: 20px;
   }
 `;
 

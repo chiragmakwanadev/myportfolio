@@ -165,6 +165,10 @@ const NavBar = styled.div`
     display: flex;
     flex-direction: row;
     gap: 50px;
+
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
   }
   li {
     list-style: none;
