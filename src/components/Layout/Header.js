@@ -83,6 +83,10 @@ const NavBar = styled.ul`
   flex-direction: row;
   gap: 20px;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   ul {
     display: flex;
     flex-direction: row;
@@ -154,7 +158,7 @@ const HamburgerIcon = styled.button`
   span {
     width: 100%;
     height: 1px;
-    background-color: white;
+    background-color: #814141;
     transition: all 0.3s ease-in-out;
 
     &:first-child {
