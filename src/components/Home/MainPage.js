@@ -59,11 +59,11 @@ const MainPage = () => {
               <ContactHeader>Contact Me</ContactHeader>
               <ModalBody>
                 <label> Name</label>
-                <input type="text" />
+                <input type="text" placeholder="Name..." />
                 <label>Email</label>
-                <input type="email" />
+                <input type="email" placeholder="Email..." />
                 <label>Message</label>
-                <input type="text" />
+                <textarea />
                 <button onClick={handleClick}>SUBMIT</button>
               </ModalBody>
             </ContactBody>
@@ -317,7 +317,8 @@ const ModalBody = styled.div`
     }
   }
 
-  input {
+  input,
+  textarea {
     display: flex;
     margin: auto;
     width: 40%;
