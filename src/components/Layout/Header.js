@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -9,8 +9,20 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
-    setIsOpen(!isOpen);
+    if (!isOpen) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.position = "fixed";
+    } else {
+      document.body.style.position = "static";
+    }
+  }, [isOpen]);
 
   return (
     <HeaderMain currentLocation={location.pathname}>
@@ -39,13 +51,19 @@ const Header = () => {
         {isOpen && (
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={handleClick}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="about">About Me</Link>
+              <Link to="about" onClick={handleClick}>
+                About Me
+              </Link>
             </li>
             <li>
-              <Link to="projects">Project</Link>
+              <Link to="projects" onClick={handleClick}>
+                Project
+              </Link>
             </li>
           </ul>
         )}
@@ -121,9 +139,9 @@ const HamburgMenu = styled.div`
     left: 0;
     bottom: 0;
     padding: 20px;
-    background: black;
-    backdrop-filter: blur(4px);
-    background: rgba(0, 0, 0, 0.8);
+    background: #1b1b1b;
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.9);
     box-shadow: 0 0 2px white;
     z-index: 1;
     list-style: none;
@@ -131,18 +149,21 @@ const HamburgMenu = styled.div`
 
     li {
       padding: 20px;
-      text-align: center;
-      padding-bottom: 50pxpx;
+      /* text-align: center; */
+      padding-top: 50px;
 
       a {
         text-decoration: none;
         font-weight: 400;
         letter-spacing: 7px;
         color: white;
-        text-align: center;
 
         &:hover {
           color: #814141;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 30px;
         }
       }
 

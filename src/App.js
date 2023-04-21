@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="projects" element={<Projects1 />} />
+
         <Route path="*" element={<Nomatch />} />
       </Routes>
     </Layout>

@@ -9,7 +9,7 @@ export const MainButn = styled.button`
   border-radius: 40px;
 
   &:hover {
-    background-color: black;
+    background-color: #1b1b1b;
     color: white;
     transition-duration: 0.5s;
     transition-delay: 0.1s;

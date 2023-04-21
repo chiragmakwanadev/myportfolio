@@ -2,7 +2,28 @@ import React from "react";
 import styled from "styled-components";
 import { MainButn, MainQuote } from "../../styles/commonStyle";
 
+import { useState } from "react";
+import { useEffect } from "react";
+
 const MainPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    if (!isOpen) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.position = "fixed";
+    } else {
+      document.body.style.position = "";
+    }
+  }, [isOpen]);
+
   return (
     <div className="App">
       <HomeMain>
@@ -11,7 +32,7 @@ const MainPage = () => {
             <MainImg src="/images/image2/mainbody2.jpg" alt="" />
           </div>
           <MainBtm>
-            <MainPageBtn>LET'S TALK ➜</MainPageBtn>
+            <MainPageBtn onClick={handleClick}>LET'S TALK ➜</MainPageBtn>
 
             <Context>
               an FrontEnd Web Developer based in Surat,Gujarat,India. Currently
@@ -31,6 +52,23 @@ const MainPage = () => {
             </MainPageQuote>
           </TitleCont>
         </Body>
+        {isOpen && (
+          <Body2>
+            <ContactBody>
+              <CloseModalbtn onClick={handleClick}>&times;</CloseModalbtn>
+              <ContactHeader>Contact Me</ContactHeader>
+              <ModalBody>
+                <label> Name</label>
+                <input type="text" />
+                <label>Email</label>
+                <input type="email" />
+                <label>Message</label>
+                <input type="text" />
+                <button onClick={handleClick}>SUBMIT</button>
+              </ModalBody>
+            </ContactBody>
+          </Body2>
+        )}
       </HomeMain>
     </div>
   );
@@ -186,5 +224,142 @@ const MainPageBtn = styled(MainButn)`
     position: relative;
     left: auto;
     bottom: auto;
+  }
+`;
+
+const Body2 = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(20px);
+`;
+
+const ContactBody = styled.div`
+  display: flex;
+  position: sticky;
+  margin: auto;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1b1b1b;
+  border-radius: 20px;
+  top: 10%;
+  right: 25%;
+
+  @media (max-width: 768px) {
+    width: 80%;
+
+    right: 10%;
+  }
+`;
+
+const CloseModalbtn = styled.button`
+  display: flex;
+  margin: auto;
+  position: relative;
+  left: 45%;
+  padding: 10px;
+  color: white;
+  font-size: 40px;
+  background-color: #1b1b1b;
+  outline: 0;
+  border: 0;
+
+  @media (max-width: 1336px) {
+    left: 40%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    padding: 5px;
+  }
+`;
+const ContactHeader = styled.h1`
+  font-size: 70px;
+  letter-spacing: 3px;
+  font-family: "Abril Fatface";
+  color: white;
+
+  @media (max-width: 1080px) {
+    font-size: 40px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+`;
+const ModalBody = styled.div`
+  width: 100%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  padding-bottom: 20px;
+  align-items: center;
+
+  label {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    letter-spacing: 5px;
+    color: white;
+
+    @media (max-width: 1336px) {
+      padding-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+      padding-bottom: 5px;
+    }
+  }
+
+  input {
+    display: flex;
+    margin: auto;
+    width: 40%;
+    height: 40px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background: #1b1b1b;
+    color: white;
+    font-size: 20px;
+    outline: 0;
+
+    @media (max-width: 1080px) {
+      width: 70%;
+    }
+    @media (max-width: 768px) {
+      width: 70%;
+      font-size: 13px;
+      height: 20px;
+    }
+  }
+
+  button {
+    width: 20%;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    background-color: #1b1b1b;
+    color: white;
+    border-width: 1px;
+    border-color: white;
+
+    &:hover {
+      background-color: darkred;
+    }
+
+    @media (max-width: 1336px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
   }
 `;
