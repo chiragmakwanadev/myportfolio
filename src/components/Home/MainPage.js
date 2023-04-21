@@ -260,6 +260,7 @@ const CloseModalbtn = styled.button`
   margin: auto;
   position: relative;
   left: 45%;
+  bottom: -10px;
   padding: 10px;
   color: white;
   font-size: 40px;
@@ -274,6 +275,7 @@ const CloseModalbtn = styled.button`
   @media (max-width: 768px) {
     font-size: 20px;
     padding: 5px;
+    bottom: -10px;
   }
 `;
 const ContactHeader = styled.h1`
@@ -306,12 +308,12 @@ const ModalBody = styled.div`
     color: white;
 
     @media (max-width: 1336px) {
-      padding-bottom: 10px;
+      padding-bottom: 15px;
     }
 
     @media (max-width: 768px) {
-      font-size: 10px;
-      padding-bottom: 5px;
+      font-size: 15px;
+      padding-bottom: 15px;
     }
   }
 
@@ -332,9 +334,9 @@ const ModalBody = styled.div`
       width: 70%;
     }
     @media (max-width: 768px) {
-      width: 70%;
+      width: 80%;
       font-size: 13px;
-      height: 20px;
+      height: 30px;
     }
   }
 
@@ -356,10 +358,12 @@ const ModalBody = styled.div`
 
     @media (max-width: 1336px) {
       font-size: 16px;
+      width: 30%;
     }
 
     @media (max-width: 768px) {
-      font-size: 10px;
+      font-size: 15px;
+      width: 30%;
     }
   }
 `;
