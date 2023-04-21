@@ -32,9 +32,27 @@ const Projects = () => {
         <Right>
           <Grid>
             <Grid1 src="../images/image2/project1.jpg" alt="" />
-            <img className="grid2" src="../images/image2/project2.jpg" alt="" />
-            <img className="grid3" src="../images/image2/project3.jpg" alt="" />
-            <img className="grid4" src="../images/image2/project4.jpg" alt="" />
+            <StyledImage
+              GridRow="1/2"
+              Gridcolumn="2/3"
+              className="grid2"
+              src="../images/image2/project2.jpg"
+              alt=""
+            />
+            <StyledImage
+              GridRow="2/3"
+              Gridcolumn="2/3"
+              className="grid3"
+              src="../images/image2/project3.jpg"
+              alt=""
+            />
+            <StyledImage
+              GridRow="3/4"
+              Gridcolumn="2/3"
+              className="grid4"
+              src="../images/image2/project4.jpg"
+              alt=""
+            />
           </Grid>
         </Right>
       </Bottom>
@@ -157,7 +175,7 @@ const Grid = styled.div`
 
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 30px;
   }
@@ -167,13 +185,19 @@ const Grid = styled.div`
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
     }
   }
 `;
 
 const Grid1 = styled.img`
-  grid-row: span 3;
+  grid-row: 1/4;
+  height: 100% !important;
+`;
+
+const StyledImage = styled.img`
+  grid-row: ${(props) => props.GridRow};
+  grid-column: ${(props) => props.Gridcolumn};
 `;
 
 const ProButn = styled(MainButn)`
