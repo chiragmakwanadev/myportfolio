@@ -112,12 +112,14 @@ const NavBar = styled.ul`
 `;
 
 const HamburgMenu = styled.div`
-  position: relative;
+  /* position: relative; */
   display: none;
   ul {
     position: absolute;
-    top: 100%;
-    right: 0px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     padding: 20px;
     background: black;
     backdrop-filter: blur(4px);
@@ -125,12 +127,12 @@ const HamburgMenu = styled.div`
     box-shadow: 0 0 2px white;
     z-index: 1;
     list-style: none;
-    margin: 0;
-    width: 170px;
-    border-radius: 20px;
+    margin: auto;
 
     li {
       padding: 20px;
+      text-align: center;
+      padding-bottom: 50pxpx;
 
       a {
         text-decoration: none;
@@ -190,5 +192,6 @@ const HamburgerIcon = styled.button`
 
   @media (max-width: 768px) {
     display: flex;
+    position: relative;
   }
 `;
