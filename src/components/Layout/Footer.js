@@ -42,7 +42,12 @@ const Footer = () => {
             keep in touch with me <br />
             say hi!
           </FooterMainQuote>
-          <Email>chirag@aowstudio.dev</Email>
+          <Email>
+            <a href="mailto: chiragmakwanadev@gmail.com">
+              {" "}
+              chirag@aowstudio.dev
+            </a>
+          </Email>
         </FooterBody>
         <FooterBottom>
           <div> &#169; 2021 All Rights Reserved</div>
@@ -126,10 +131,14 @@ const FooterBody = styled.div`
 
 const Email = styled.div`
   font-size: 30px;
-  color: lightgray;
-  border-bottom: 1px solid white;
+
   font-weight: 100;
   padding-top: 100px;
+  a {
+    text-decoration: none;
+    color: orangered;
+    border-bottom: 1px solid orangered;
+  }
 
   @media (max-width: 425px) {
     font-size: 20px;

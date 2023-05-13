@@ -30,12 +30,11 @@ const About = () => {
             alert: it's never a good idea). And let's not forget the endless
             cups of coffee required to power me through long nights of
             debugging. But hey, I wouldn't have it any other way. When I'm not
-            coding, you can find me at the local coffee shop, debating the
-            merits of Comic Sans with my fellow web development nerds. So if
-            you're looking for a web developer who's equal parts coding genius
-            and comedy gold, look no further. I'm your gal/guy/non-binary person
+            coding, you can find me at the local coffee shop. So if you're
+            looking for a web developer who's equal parts coding genius and
+            comedy gold, look no further. I'm your gal/guy/non-binary person
             (because let's be inclusive, people), and I'm ready to make your
-            website sparkle. Let's make some magic happen on the web!
+            website sparkle.
           </Context>
         </AboutRight>
       </AboutBtm>

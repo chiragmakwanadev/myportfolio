@@ -26,7 +26,9 @@ const Header = () => {
 
   return (
     <HeaderMain currentLocation={location.pathname}>
-      <div>✻ MORSE'S STUDIO</div>
+      <HomeLink>
+        <Link to="/">✻ MORSE'S STUDIO</Link>
+      </HomeLink>
       <nav>
         <NavBar>
           <ul>
@@ -82,13 +84,8 @@ export const HeaderMain = styled.div`
   justify-content: space-between;
   padding: 60px;
   font-weight: 500;
-  /* background-color: ${(props) =>
-    (props.currentLocation === "/about" && "#1B1B1B") ||
-    (props.currentLocation === "/projects" && "#1B1B1B")}; */
-  background-color: ${(props) =>
-    props.currentLocation === "/" ? "white" : "#1B1B1B"};
 
-  color: ${(props) => (props.currentLocation === "/" ? "#1B1B1B" : "white")};
+  background-color: #1b1b1b;
 
   @media (max-width: 768px) {
     padding: 30px;
@@ -97,6 +94,13 @@ export const HeaderMain = styled.div`
   @media (max-width: 425px) {
     font-size: 13px;
     padding: 20px;
+  }
+`;
+
+const HomeLink = styled.div`
+  a {
+    text-decoration: none;
+    color: orangered;
   }
 `;
 
@@ -124,7 +128,7 @@ const NavBar = styled.ul`
     color: rgb(131, 131, 131);
 
     &:hover {
-      color: #814141;
+      color: orangered;
     }
   }
 `;
@@ -189,6 +193,7 @@ const HamburgerIcon = styled.button`
   cursor: pointer;
   padding: 0;
   z-index: 2;
+  color: orangered;
 
   span {
     width: 100%;
@@ -198,6 +203,7 @@ const HamburgerIcon = styled.button`
 
     &:first-child {
       transform-origin: top left;
+
       transform: ${({ isOpen }) => (isOpen ? "rotate(45deg)" : "none")};
     }
     &:last-child {

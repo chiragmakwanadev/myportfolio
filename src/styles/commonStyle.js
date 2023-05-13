@@ -4,12 +4,12 @@ export const MainButn = styled.button`
   padding: 20px;
   font-size: 25px;
   align-items: flex-end;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: #1b1b1b;
+  color: white;
   border-radius: 40px;
 
   &:hover {
-    background-color: #1b1b1b;
+    background-color: orangered;
     color: white;
     transition-duration: 0.5s;
     transition-delay: 0.1s;
@@ -43,10 +43,7 @@ export const MainQuote = styled.div`
   padding-top: 50px;
   line-height: 130px;
   font-family: "Abril Fatface";
-  color: ${(props) =>
-    (props.colorStyle === "black" && "rgb(39, 39, 39)") ||
-    (props.colorStyle === "red" && "#842727") ||
-    (props.colorStyle === "white" && "white")};
+  color: white;
 
   @media (max-width: 768px) {
     font-size: 70px;

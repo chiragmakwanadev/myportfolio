@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { MainQuote } from "../../styles/commonStyle";
-import { HeaderStyle } from "../../styles/commonStyle";
+
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -24,15 +24,11 @@ const Services = () => {
           when you don't create things, you become defined by your tastes rather
           than ability. your tastes only narrow & exclude people. so create
         </ServiceContext>
-        <div>
-          <HeaderStyle>MY SERVICES</HeaderStyle>
-        </div>
-
         <ServiceBtn>
           <ServiceLink2>
             <img src="../images/logo101.png" alt="" />
           </ServiceLink2>
-          <ServiceLink href="google.com">Projects ➜</ServiceLink>
+          <ServiceLink to="/projects">Projects ➜</ServiceLink>
         </ServiceBtn>
       </ServiceRight>
     </ServiceBody>
@@ -130,7 +126,7 @@ const ServiceBtn = styled.div`
   width: 70%;
   display: flex;
   flex-direction: row;
-  border-bottom: 2px solid darkgray;
+  border-bottom: 2px solid orangered;
 
   line-height: 70px;
   padding-top: 100px;
@@ -139,7 +135,7 @@ const ServiceBtn = styled.div`
     width: 40px;
     margin: auto;
     margin-left: -1px;
-    filter: invert(100%) sepia() saturate(10000%) hue-rotate(300deg);
+    filter: invert(100%) sepia() saturate(0%) hue-rotate(0deg);
   }
 
   @media (max-width: 1336px) {

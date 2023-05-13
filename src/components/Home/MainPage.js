@@ -40,12 +40,12 @@ const MainPage = () => {
             </Context>
           </MainBtm>
           <TitleCont>
-            <MainPageQuote colorStyle="white">
+            <MainPageQuote colorStyle="black">
               Capturing
               <br />
               Every
             </MainPageQuote>
-            <MainPageQuote colorStyle="black">
+            <MainPageQuote colorStyle="white">
               Precious
               <br />
               Moment.
@@ -77,7 +77,7 @@ const MainPage = () => {
 export default MainPage;
 
 const HomeMain = styled.div`
-  background-color: rgb(255, 255, 255);
+  background-color: #1b1b1b;
   margin: auto;
   padding-top: 100px;
 `;
@@ -135,7 +135,7 @@ const Context = styled.div`
   position: absolute;
   bottom: 10%;
   right: 12%;
-
+  color: white;
   letter-spacing: 3px;
   line-height: 35px;
 
@@ -208,6 +208,8 @@ const MainPageBtn = styled(MainButn)`
   left: 12%;
   font-size: 16px;
   bottom: 10%;
+  background-color: #1b1b1b;
+  border-color: orangered;
 
   @media (max-width: 1336px) {
     font-size: 10px;
@@ -262,7 +264,7 @@ const CloseModalbtn = styled.button`
   left: 45%;
   bottom: -10px;
   padding: 10px;
-  color: white;
+  color: orangered;
   font-size: 40px;
   background-color: #1b1b1b;
   outline: 0;
@@ -330,6 +332,7 @@ const ModalBody = styled.div`
     color: white;
     font-size: 20px;
     outline: 0;
+    border-color: orangered;
 
     @media (max-width: 1080px) {
       width: 70%;
@@ -351,10 +354,10 @@ const ModalBody = styled.div`
     background-color: #1b1b1b;
     color: white;
     border-width: 1px;
-    border-color: white;
+    border-color: orangered;
 
     &:hover {
-      background-color: darkred;
+      background-color: orangered;
     }
 
     @media (max-width: 1336px) {

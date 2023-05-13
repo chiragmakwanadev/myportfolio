@@ -5,50 +5,62 @@ import { MainQuote } from "../../styles/commonStyle";
 
 const Aboutme = () => {
   return (
-    <AboutBody>
-      <AboutLeft>
-        <HeaderStyle>ABOUT ME</HeaderStyle>
-        <MainQuote colorStyle="white">
-          coding
-          <br />
-          always
-          <br />
-          has meaning
-        </MainQuote>
-        <Context>
-          Perfection is achieved not when there is nothing more to add, but
-          rather when there is nothing more to take away.
-        </Context>
-        <div>
-          <AboutHeaderStyle>MY SPECIALTIES</AboutHeaderStyle>
-          <Hashtags>
-            <li>DEVELOPER</li>
-            <li>GAMER</li>
-            <li>AUDIOPHILE</li>
-            <li>INTERIOR</li>
-            <li>SLACKER</li>
-            <li>FOOD</li>
-            <li>ARCHITECT</li>
-          </Hashtags>
-        </div>
-      </AboutLeft>
+    <Body>
+      <AboutBody>
+        <AboutLeft>
+          <HeaderStyle>ABOUT ME</HeaderStyle>
+          <MainQuote colorStyle="white">
+            coding
+            <br />
+            always
+            <br />
+            has meaning
+          </MainQuote>
+          <Context>
+            Perfection is achieved not when there is nothing more to add, but
+            rather when there is nothing more to take away.
+          </Context>
+          <div>
+            <AboutHeaderStyle>MY SPECIALTIES</AboutHeaderStyle>
+            <Hashtags>
+              <li>DEVELOPER</li>
+              <li>GAMER</li>
+              <li>AUDIOPHILE</li>
+              <li>INTERIOR</li>
+              <li>SLACKER</li>
+              <li>FOOD</li>
+              <li>ARCHITECT</li>
+            </Hashtags>
+          </div>
+        </AboutLeft>
 
-      <AboutRight>
-        <SideImg src="images/image2/side1.jpg" alt="" />
-      </AboutRight>
-    </AboutBody>
+        <AboutRight>
+          <SideImg src="images/image2/side1.jpg" alt="" />
+        </AboutRight>
+      </AboutBody>
+    </Body>
   );
 };
 
 export default Aboutme;
 
-const AboutBody = styled.section`
+const Body = styled.div`
+  width: 100%;
+  display: flex;
+  margin: auto;
   background-color: rgb(27, 27, 27);
+`;
+
+const AboutBody = styled.section`
   color: white;
   display: flex;
   margin: auto;
   padding-top: 20px;
-  align-content: center;
+  width: 80%;
+
+  @media (max-width: 1440px) {
+    width: 90%;
+  }
 
   @media (max-width: 1336px) {
     display: flex;
@@ -80,7 +92,7 @@ const AboutLeft = styled.div`
 const Context = styled.div`
   font-size: 25px;
   font-weight: 100;
-  width: 90%;
+  width: 80%;
   display: flex;
   padding-top: 100px;
   line-height: 40px;
@@ -100,10 +112,13 @@ const Context = styled.div`
 `;
 
 const AboutRight = styled.div`
-  width: 90%;
+  width: 50%;
   display: flex;
   margin: auto;
-  align-content: center;
+
+  @media (max-width: 1440px) {
+    width: 90%;
+  }
 
   @media (max-width: 1080px) {
     width: 100%;
@@ -119,7 +134,7 @@ const SideImg = styled.img`
   border-radius: 30px;
 
   @media (max-width: 1336px) {
-    width: 80%;
+    width: 90%;
     height: 550px;
     object-fit: cover;
     margin-top: 200px;
@@ -139,11 +154,13 @@ const Hashtags = styled.h2`
   padding-top: 100px;
   font-size: 20px;
   flex-wrap: wrap;
+  width: 80%;
 
   li {
     border: 1px solid white;
     border-radius: 40px;
     padding: 15px;
+    border-color: orangered;
   }
 
   @media (max-width: 1336px) {

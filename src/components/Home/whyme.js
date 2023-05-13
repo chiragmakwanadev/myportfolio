@@ -9,10 +9,12 @@ const Whyme = () => {
       <WhyLeft>
         <BlackHeaderStyle>WHY ME?</BlackHeaderStyle>
         <Flex>
-          <WhyMainQuote colorStyle="black">
+          <WhyMainQuote>
             make <br /> meaning <br /> in every <br />
           </WhyMainQuote>
-          <WhyMainQuote colorStyle="red">Website made</WhyMainQuote>
+          <WhyMainQuote style={{ color: "orangered" }}>
+            Website made
+          </WhyMainQuote>
         </Flex>
       </WhyLeft>
       <WhyRight>
@@ -36,7 +38,7 @@ const Whyme = () => {
 export default Whyme;
 
 const WhyMeBody = styled.section`
-  background-color: rgb(250, 250, 250);
+  background-color: #1b1b1b;
   display: flex;
   margin: auto;
   padding-top: 150px;
@@ -53,8 +55,7 @@ const WhyMeBody = styled.section`
 `;
 
 const BlackHeaderStyle = styled(HeaderStyle)`
-  color: rgb(39, 39, 39);
-
+  color: white;
   @media (max-width: 425px) {
     font-size: 10px;
     padding-bottom: 20px;
@@ -82,6 +83,7 @@ const WhyContext = styled.div`
   font-weight: 400;
   letter-spacing: 3px;
   line-height: 35px;
+  color: white;
 
   @media (max-width: 1080px) {
     font-size: 18px;
@@ -155,7 +157,7 @@ const GoodImg = styled.img`
   grid-column: 2/3;
   grid-row: 2/3;
   object-fit: cover;
-  box-shadow: 0px 0px 5px 2px rgb(49, 49, 49);
+  box-shadow: 0px 0px 0px 3px orangered;
   border-radius: 20px;
 
   @media (max-width: 768px) {
@@ -189,7 +191,7 @@ const BadImg = styled.img`
   object-fit: cover;
   grid-column: 1/2;
   grid-row: 2/3;
-  box-shadow: 0px 0px 5px 2px rgb(54, 54, 54);
+  box-shadow: 0px 0px 0px 3px orangered;
   border-radius: 20px;
 
   @media (max-width: 768px) {

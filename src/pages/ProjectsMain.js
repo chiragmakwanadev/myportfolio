@@ -150,7 +150,7 @@ const Projectbutton = styled.button`
   font-size: 20px;
   color: white;
   background-color: rgb(27, 27, 27);
-  border-color: white;
+  border-color: orangered;
 
   &:hover {
     color: black;
@@ -256,7 +256,7 @@ const ProBtn = styled.button`
   font-weight: 100;
   color: white;
   background-color: rgb(27, 27, 27);
-  border-color: white;
+  border-color: orangered;
 
   &:hover {
     color: black;

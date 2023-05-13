@@ -10,8 +10,10 @@ const Workflow = () => {
         <div>
           <BlackHeaderStyle>MY WORKFLOW</BlackHeaderStyle>
 
-          <WorkMainQuote colorStyle="black">3 easy step</WorkMainQuote>
-          <WorkMainQuote colorStyle="red">work with me</WorkMainQuote>
+          <WorkMainQuote>3 easy step</WorkMainQuote>
+          <WorkMainQuote style={{ color: "orangered" }}>
+            work with me
+          </WorkMainQuote>
         </div>
       </WorkFlowUpper>
       <WorkBody>
@@ -47,11 +49,11 @@ const Workflow = () => {
 export default Workflow;
 
 const WorkFlowBody = styled.section`
-  background-color: rgb(239, 239, 239);
+  background-color: #1b1b1b;
 `;
 
 const BlackHeaderStyle = styled(HeaderStyle)`
-  color: rgb(39, 39, 39);
+  color: white;
 
   @media (max-width: 425px) {
     font-size: 10px;
@@ -88,7 +90,7 @@ const WorkBody = styled.div`
     align-items: center;
     text-align: center;
     font-weight: 300;
-    color: rgb(59, 59, 59);
+    color: white;
   }
 
   @media (max-width: 1336px) {
@@ -116,6 +118,7 @@ const WorkBody = styled.div`
 const Workimg = styled.img`
   width: 70px;
   padding-bottom: 50px;
+  filter: invert(100%) sepia() saturate(0%) hue-rotate(0deg);
 
   @media (max-width: 768px) {
     width: 40px;
@@ -130,6 +133,7 @@ const Workimg = styled.img`
 const WorkArrow = styled.img`
   width: 100px;
   fill: #5c0b0b;
+  filter: invert(100%) sepia() saturate(0%) hue-rotate(0deg);
 
   @media (max-width: 768px) {
     width: 60px;

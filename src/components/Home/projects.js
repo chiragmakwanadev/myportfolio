@@ -2,8 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { MainButn, MainQuote } from "../../styles/commonStyle";
 import { HeaderStyle } from "../../styles/commonStyle";
+import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/projects");
+  }
+
   return (
     <ProjectBody>
       <ProjectUpper>
@@ -26,7 +33,7 @@ const Projects = () => {
             through the door.
           </Context2>
           <div>
-            <ProButn>VIEW PROJECT</ProButn>
+            <ProButn onClick={handleClick}>VIEW PROJECT</ProButn>
           </div>
         </ProjectLeft>
         <Right>
@@ -65,7 +72,7 @@ export default Projects;
 const ProjectBody = styled.section`
   display: flex;
   margin: auto;
-  background-color: rgb(239, 239, 239);
+  background-color: #1b1b1b;
   flex-direction: column;
 `;
 
@@ -93,6 +100,7 @@ const Context = styled.div`
   padding-top: 100px;
   letter-spacing: 3px;
   padding-bottom: 100px;
+  color: white;
   @media (max-width: 425px) {
     font-size: 15px;
     padding-top: 50px;
@@ -105,6 +113,7 @@ const Context2 = styled.div`
   padding-top: 100px;
   letter-spacing: 3px;
   padding-bottom: 100px;
+  color: white;
 
   @media (max-width: 1336px) {
     font-size: 20px;
@@ -122,7 +131,7 @@ const Context2 = styled.div`
 `;
 
 const BlackHeader = styled(HeaderStyle)`
-  color: rgb(39, 39, 39);
+  color: white;
 `;
 
 const Bottom = styled.div`
@@ -203,7 +212,8 @@ const StyledImage = styled.img`
 const ProButn = styled(MainButn)`
   font-size: 15px;
   width: 50%;
-  background-color: rgb(239, 239, 239);
+  background-color: #1b1b1b;
+  border-color: orangered;
 
   @media (max-width: 1336px) {
     width: 130px;

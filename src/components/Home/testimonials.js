@@ -1,8 +1,11 @@
 import React from "react";
-
+import { Testimos } from "../../data/testimonialdata";
 import styled from "styled-components";
-import { MainButn, MainQuote } from "../../styles/commonStyle";
+import { MainQuote } from "../../styles/commonStyle";
 import { HeaderStyle } from "../../styles/commonStyle";
+import Carousel from "react-material-ui-carousel";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 const Testimonials = () => {
   return (
@@ -15,24 +18,57 @@ const Testimonials = () => {
         </div>
       </Upper>
       <Bottom>
-        <Border>
-          <div>
-            <Logo src="../images/google.png" alt="" />
-          </div>
-          <Context>
-            The layout is very clean, but also kind of bland. It makes you feel
-            comfortable with the site because you don't feel overwhelmed by
-            information, but the presentation of the site needs to be worked on
-            a bit more.
-          </Context>
-          <Footer>
-            <h1>PROFESSIONAL SAGE</h1>
-            <h2>⭐ 4.5</h2>
-          </Footer>
-        </Border>
-        <Button>
-          <Butn>VIEW ALL ➜</Butn>
-        </Button>
+        <Carousel
+          indicatorContainerProps={{
+            style: {
+              marginTop: "70px", // 5
+              textAlign: "center", // 4
+              width: {
+                xs: 100,
+                sm: 200,
+                md: 300,
+              },
+            },
+          }}
+          navButtonsProps={{
+            // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
+            style: {
+              backgroundColor: "#1b1b1b",
+              borderRadius: 50,
+              opacity: 1,
+              top: 10,
+              width: {
+                xs: 100,
+                sm: 200,
+                md: 300,
+              },
+            },
+          }}
+          navButtonsWrapperProps={{
+            // Move the buttons to the bottom. Unsetting top here to override default style.
+            style: {
+              bottom: "0",
+              top: "10",
+            },
+          }}
+          NextIcon={<ArrowForwardIosIcon />}
+          PrevIcon={<ArrowBackIosNewIcon />}
+        >
+          {Testimos.map((test) => {
+            return (
+              <Border key={test.id}>
+                <Context>{test.context}</Context>
+                <Footer>
+                  <FooterLeft>
+                    <img src={test.image} alt="" />
+                    <h1>{test.name}</h1>
+                  </FooterLeft>
+                  <h2>⭐ {test.rating}</h2>
+                </Footer>
+              </Border>
+            );
+          })}
+        </Carousel>
       </Bottom>
     </Testi>
   );
@@ -41,8 +77,8 @@ const Testimonials = () => {
 export default Testimonials;
 
 const Testi = styled.section`
-  background-color: rgb(250, 250, 250);
-  padding-bottom: 200px;
+  background-color: #1b1b1b;
+  padding-bottom: 100px;
 
   @media (max-width: 768px) {
     padding-bottom: 100px;
@@ -50,7 +86,8 @@ const Testi = styled.section`
 `;
 
 const BlackHeaderStyle = styled(HeaderStyle)`
-  color: rgb(39, 39, 39);
+  color: orangered;
+  padding-bottom: 100px;
 
   @media (max-width: 425px) {
     font-size: 10px;
@@ -77,35 +114,27 @@ const Upper = styled.div`
 
 const Bottom = styled.div`
   padding-top: 150px;
-
+  width: 60%;
+  margin: auto;
   @media (max-width: 768px) {
     padding-top: 70px;
+    width: 90%;
   }
 `;
 const Border = styled.div`
-  border: 2px solid rgb(215, 215, 215);
-  width: 40%;
+  width: 60%;
   display: flex;
   margin: auto;
   flex-direction: column;
-  background-color: rgb(215, 215, 215);
-  padding: 40px;
-  border-radius: 30px;
 
   @media (max-width: 1336px) {
     width: 70%;
   }
-  @media (max-width: 425px) {
-    width: 90%;
+  @media (max-width: 768px) {
+    width: 70%;
   }
-`;
-
-const Logo = styled.img`
-  width: 100px;
-  padding-bottom: 50px;
-
   @media (max-width: 425px) {
-    width: 40px;
+    width: 70%;
   }
 `;
 
@@ -115,10 +144,24 @@ const Context = styled.div`
   color: rgb(49, 49, 49);
   border-bottom: 1px solid rgb(117, 117, 117);
   line-height: 40px;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
+  color: white;
+  text-align: center;
+  height: 200px;
+
+  @media (max-width: 1080px) {
+    font-size: 15px;
+    height: 170px;
+  }
+
+  @media (max-width: 950px) {
+    font-size: 13px;
+    height: 170px;
+  }
 
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: 13px;
+    line-height: 30px;
   }
 
   @media (max-width: 425px) {
@@ -128,32 +171,60 @@ const Context = styled.div`
   }
 `;
 
+const FooterLeft = styled.div`
+  display: flex;
+  margin: auto;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+
+  h1 {
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 5px;
+
+    color: white;
+  }
+
+  img {
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+      width: 30px;
+    }
+  }
+`;
+
 const Footer = styled.div`
   display: flex;
   margin: auto;
   justify-content: space-between;
   width: 90%;
-  padding-top: 40px;
-
-  h1 {
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 5px;
-    color: #2b2a2a;
-  }
+  padding-top: 20px;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 20px;
 
   h2 {
     font-size: 20px;
     font-weight: 500;
     color: #2b2a2a;
+    width: 15%;
+    color: white;
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
   }
 
   @media (max-width: 768px) {
     h1 {
-      font-size: 15px;
+      font-size: 12px;
     }
     h2 {
-      font-size: 15px;
+      font-size: 12px;
     }
   }
   @media (max-width: 425px) {
@@ -163,30 +234,6 @@ const Footer = styled.div`
     h2 {
       font-size: 10px;
     }
-  }
-`;
-
-const Button = styled.div`
-  display: flex;
-  margin: auto;
-  width: 40%;
-  padding-top: 50px;
-
-  @media (max-width: 1336px) {
-    width: 70%;
-  }
-`;
-
-const Butn = styled(MainButn)`
-  padding: 10px;
-  font-size: 15px;
-  width: 120px;
-  background-color: rgb(250, 250, 250);
-
-  @media (max-width: 768px) {
-    font-size: 10px;
-    width: 100px;
-    padding: 5px;
   }
 `;
 
