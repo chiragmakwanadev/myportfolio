@@ -178,6 +178,7 @@ const MainPageBtn = styled(MainButn)`
   width: 20%;
   align-items: center;
   color: black;
+  cursor: pointer;
 
   h2 {
     font-size: 16px;

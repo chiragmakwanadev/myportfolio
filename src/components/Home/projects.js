@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { MainButn } from "../../styles/commonStyle";
 import { HeaderStyle } from "../../styles/commonStyle";
 import { useNavigate } from "react-router-dom";
+import { Carousel } from "../../utils/Carousel";
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -36,7 +36,9 @@ const Projects = () => {
             <ProButn onClick={handleClick}>VIEW PROJECT</ProButn>
           </div>
         </ProjectLeft>
-        <Right></Right>
+        <Right>
+          <Carousel />
+        </Right>
       </Bottom>
     </ProjectBody>
   );
@@ -119,7 +121,7 @@ const Bottom = styled.div`
   width: 90%;
   margin: auto;
   flex-direction: row;
-  padding-bottom: 150px;
+  padding: 100px 0px;
 
   @media (max-width: 1080px) {
     flex-direction: column-reverse;
@@ -149,7 +151,6 @@ const ProjectLeft = styled.div`
 const Right = styled.div`
   display: flex;
   width: 60%;
-  margin: auto;
 
   @media (max-width: 425px) {
     width: 90%;
