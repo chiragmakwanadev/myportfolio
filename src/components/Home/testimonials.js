@@ -1,8 +1,7 @@
 import React from "react";
 import { Testimos } from "../../data/testimonialdata";
 import styled from "styled-components";
-import { MainQuote } from "../../styles/commonStyle";
-import { HeaderStyle } from "../../styles/commonStyle";
+
 import Carousel from "react-material-ui-carousel";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
@@ -11,11 +10,10 @@ const Testimonials = () => {
   return (
     <Testi>
       <Upper>
-        <BlackHeaderStyle>TESTIMONIAL</BlackHeaderStyle>
-        <div>
-          <TestMainQuote colorStyle="black">my happy</TestMainQuote>
-          <TestMainQuote colorStyle="red">clients</TestMainQuote>
-        </div>
+        <BlackHeaderStyle>Testimonial</BlackHeaderStyle>
+        <TestMainQuote>
+          <h1>My happy Clients.</h1>
+        </TestMainQuote>
       </Upper>
       <Bottom>
         <Carousel
@@ -85,9 +83,10 @@ const Testi = styled.section`
   }
 `;
 
-const BlackHeaderStyle = styled(HeaderStyle)`
-  color: orangered;
-  padding-bottom: 100px;
+const BlackHeaderStyle = styled.h1`
+  color: #ffffe3;
+  font-family: "Exo 2", sans-serif;
+  letter-spacing: 3px;
 
   @media (max-width: 425px) {
     font-size: 10px;
@@ -99,6 +98,13 @@ const BlackHeaderStyle = styled(HeaderStyle)`
 
   @media (max-width: 325px) {
     letter-spacing: 10px;
+  }
+`;
+
+const TestMainQuote = styled.div`
+  h1 {
+    font-size: 100px;
+    color: #ffffe3;
   }
 `;
 
@@ -141,11 +147,10 @@ const Border = styled.div`
 const Context = styled.div`
   font-size: 20px;
   font-weight: 400;
-  color: rgb(49, 49, 49);
-  border-bottom: 1px solid rgb(117, 117, 117);
+  color: #ffffe3;
+  border-bottom: 1px solid #ffffe3;
   line-height: 40px;
   padding-bottom: 30px;
-  color: white;
   text-align: center;
   height: 200px;
 
@@ -182,8 +187,7 @@ const FooterLeft = styled.div`
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 5px;
-
-    color: white;
+    color: #ffffe3;
   }
 
   img {
@@ -212,7 +216,7 @@ const Footer = styled.div`
     font-weight: 500;
     color: #2b2a2a;
     width: 15%;
-    color: white;
+    color: #ffffe3;
 
     @media (max-width: 768px) {
       font-size: 10px;
@@ -235,8 +239,4 @@ const Footer = styled.div`
       font-size: 10px;
     }
   }
-`;
-
-const TestMainQuote = styled(MainQuote)`
-  padding-top: 0px;
 `;

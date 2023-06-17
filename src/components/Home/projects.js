@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { MainButn, MainQuote } from "../../styles/commonStyle";
+import { MainButn } from "../../styles/commonStyle";
 import { HeaderStyle } from "../../styles/commonStyle";
 import { useNavigate } from "react-router-dom";
 
@@ -14,13 +14,13 @@ const Projects = () => {
   return (
     <ProjectBody>
       <ProjectUpper>
-        <div>
-          <ProjectMainQuote colorStyle="black">moments</ProjectMainQuote>
-          <ProjectMainQuote colorStyle="red">we capture</ProjectMainQuote>
-        </div>
+        <ProjectMainQuote>
+          <h1>Moments</h1>
+          <h2>we capture.</h2>
+        </ProjectMainQuote>
         <Context>
-          Perfection is achieved not when there is nothing more to add, but
-          rather when there is nothing more to take away.
+          Explore a selection of frontend projects featuring elegant designs and
+          user-friendly interfaces.
         </Context>
       </ProjectUpper>
       <Bottom>
@@ -36,32 +36,7 @@ const Projects = () => {
             <ProButn onClick={handleClick}>VIEW PROJECT</ProButn>
           </div>
         </ProjectLeft>
-        <Right>
-          <Grid>
-            <Grid1 src="../images/image2/project1.jpg" alt="" />
-            <StyledImage
-              GridRow="1/2"
-              Gridcolumn="2/3"
-              className="grid2"
-              src="../images/image2/project2.jpg"
-              alt=""
-            />
-            <StyledImage
-              GridRow="2/3"
-              Gridcolumn="2/3"
-              className="grid3"
-              src="../images/image2/project3.jpg"
-              alt=""
-            />
-            <StyledImage
-              GridRow="3/4"
-              Gridcolumn="2/3"
-              className="grid4"
-              src="../images/image2/project4.jpg"
-              alt=""
-            />
-          </Grid>
-        </Right>
+        <Right></Right>
       </Bottom>
     </ProjectBody>
   );
@@ -74,6 +49,7 @@ const ProjectBody = styled.section`
   margin: auto;
   background-color: #1b1b1b;
   flex-direction: column;
+  padding-top: 100px;
 `;
 
 const ProjectUpper = styled.div`
@@ -96,11 +72,14 @@ const ProjectUpper = styled.div`
 
 const Context = styled.div`
   font-size: 20px;
-  font-weight: 400;
+  width: 70%;
+  font-weight: lighter;
+  letter-spacing: 5px;
+  line-height: 30px;
   padding-top: 100px;
-  letter-spacing: 3px;
+  text-align: center;
+  color: #ffffe3;
   padding-bottom: 100px;
-  color: white;
   @media (max-width: 425px) {
     font-size: 15px;
     padding-top: 50px;
@@ -108,12 +87,12 @@ const Context = styled.div`
   }
 `;
 const Context2 = styled.div`
-  font-size: 25px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: lighter;
   padding-top: 100px;
   letter-spacing: 3px;
   padding-bottom: 100px;
-  color: white;
+  color: #ffffe3;
 
   @media (max-width: 1336px) {
     font-size: 20px;
@@ -131,7 +110,8 @@ const Context2 = styled.div`
 `;
 
 const BlackHeader = styled(HeaderStyle)`
-  color: white;
+  color: #ffffe3;
+  font-size: 50px;
 `;
 
 const Bottom = styled.div`
@@ -176,44 +156,23 @@ const Right = styled.div`
   }
 `;
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 15px;
-
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 30px;
-  }
-
-  @media (max-width: 1080px) {
-    grid-gap: 5px;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-`;
-
-const Grid1 = styled.img`
-  grid-row: 1/4;
-  height: 100% !important;
-`;
-
-const StyledImage = styled.img`
-  grid-row: ${(props) => props.GridRow};
-  grid-column: ${(props) => props.Gridcolumn};
-`;
-
-const ProButn = styled(MainButn)`
-  font-size: 15px;
-  width: 50%;
+const ProButn = styled.button`
+  font-size: 13px;
+  padding: 20px;
+  border-radius: 30px;
+  width: 30%;
   background-color: #1b1b1b;
-  border-color: orangered;
+  border-color: #ffffe3;
+  color: #ffffe3;
+  border: 1px solid #ffffe3;
+
+  &:hover {
+    background-color: #ffffe3;
+    color: #1b1b1b;
+    transition: background-color 0.2s ease-in;
+    border-color: #1b1b1b;
+    transition-delay: 0.2s;
+  }
 
   @media (max-width: 1336px) {
     width: 130px;
@@ -228,6 +187,19 @@ const ProButn = styled(MainButn)`
   }
 `;
 
-const ProjectMainQuote = styled(MainQuote)`
-  padding-top: 0px;
+const ProjectMainQuote = styled.h1`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 70px;
+
+  h1 {
+    font-size: 100px;
+    color: #ffffe3;
+  }
+
+  h2 {
+    font-size: 100px;
+    color: #ffffe3;
+  }
 `;

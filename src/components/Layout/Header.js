@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <HeaderMain currentLocation={location.pathname}>
       <HomeLink>
-        <Link to="/">✻ MORSE'S STUDIO</Link>
+        <Link to="/">MORSE'S STUDIO.</Link>
       </HomeLink>
       <nav>
         <NavBar>
@@ -40,6 +40,9 @@ const Header = () => {
             </li>
             <li>
               <Link to="projects">Project</Link>
+            </li>
+            <li>
+              <Link to="Blogs">Blogs</Link>
             </li>
           </ul>
         </NavBar>
@@ -78,13 +81,11 @@ export default Header;
 
 export const HeaderMain = styled.div`
   width: 100%;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 60px;
-  font-weight: 500;
-
+  font-weight: bolder;
   background-color: #1b1b1b;
 
   @media (max-width: 768px) {
@@ -101,6 +102,11 @@ const HomeLink = styled.div`
   a {
     text-decoration: none;
     color: orangered;
+    font-size: 20px;
+    font-family: "Gasoek One", sans-serif;
+    font-weight: 600;
+    color: #ffffe3;
+    letter-spacing: 5px;
   }
 `;
 
@@ -117,7 +123,7 @@ const NavBar = styled.ul`
   ul {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 30px;
   }
   li {
     list-style: none;
@@ -126,9 +132,10 @@ const NavBar = styled.ul`
   a {
     text-decoration: none;
     color: rgb(131, 131, 131);
+    font-weight: lighter;
 
     &:hover {
-      color: orangered;
+      color: #ffffe3;
     }
   }
 `;

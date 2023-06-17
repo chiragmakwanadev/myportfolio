@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { MainQuote } from "../../styles/commonStyle";
 
 const Footer = () => {
   return (
@@ -38,14 +37,14 @@ const Footer = () => {
           </div>
         </Header>
         <FooterBody>
-          <FooterMainQuote colorStyle="white">
-            keep in touch with me <br />
+          <FooterMainQuote>
+            Keep in touch with me <br />
             say hi!
           </FooterMainQuote>
           <Email>
             <a href="mailto: chiragmakwanadev@gmail.com">
               {" "}
-              chirag@aowstudio.dev
+              chiragmakwanadev@gmail.com
             </a>
           </Email>
         </FooterBody>
@@ -63,6 +62,9 @@ const Footer = () => {
                 <li>
                   <Link to="projects">Project</Link>
                 </li>
+                <li>
+                  <Link to="Blogs">Blogs</Link>
+                </li>
               </ul>
             </NavBar>
           </nav>
@@ -78,7 +80,7 @@ const FooterMain = styled.section`
   width: auto;
   margin: auto;
   background-color: rgb(27, 27, 27);
-  color: white;
+  color: #ffffe3;
 `;
 
 const Header = styled.div`
@@ -136,8 +138,13 @@ const Email = styled.div`
   padding-top: 100px;
   a {
     text-decoration: none;
-    color: orangered;
-    border-bottom: 1px solid orangered;
+    color: rgb(131, 131, 131);
+    border-bottom: 1px solid rgb(131, 131, 131);
+
+    &:hover {
+      color: #ffffe3;
+      border-bottom: 1px solid #ffffe3;
+    }
   }
 
   @media (max-width: 425px) {
@@ -188,12 +195,15 @@ const NavBar = styled.div`
     color: rgb(131, 131, 131);
 
     &:hover {
-      color: white;
+      color: #ffffe3;
     }
   }
 `;
 
-const FooterMainQuote = styled(MainQuote)`
+const FooterMainQuote = styled.h1`
+  font-size: 100px;
+  line-height: 100px;
+
   @media (max-width: 1080px) {
     width: 80%;
   }

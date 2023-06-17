@@ -28,35 +28,25 @@ const MainPage = () => {
     <div className="App">
       <HomeMain>
         <Body>
-          <div>
-            <MainImg src="/images/image2/mainbody2.jpg" alt="" />
-          </div>
+          <TitleCont>
+            <MainPageQuote colorStyle="black">YOKOSO</MainPageQuote>
+          </TitleCont>
           <MainBtm>
-            <MainPageBtn onClick={handleClick}>LET'S TALK ➜</MainPageBtn>
-
+            <MainPageBtn onClick={handleClick}>
+              <h2>Let's talk</h2>
+              <img src="/images/right.svg" alt="" />
+            </MainPageBtn>
             <Context>
               an FrontEnd Web Developer based in Surat,Gujarat,India. Currently
               working as a freelancer ... :)
             </Context>
           </MainBtm>
-          <TitleCont>
-            <MainPageQuote colorStyle="black">
-              Capturing
-              <br />
-              Every
-            </MainPageQuote>
-            <MainPageQuote colorStyle="white">
-              Precious
-              <br />
-              Moment.
-            </MainPageQuote>
-          </TitleCont>
         </Body>
         {isOpen && (
           <Body2>
             <ContactBody>
               <CloseModalbtn onClick={handleClick}>&times;</CloseModalbtn>
-              <ContactHeader>Contact Me</ContactHeader>
+              <ContactHeader>Contact-Me.</ContactHeader>
               <ModalBody>
                 <label> Name</label>
                 <input type="text" placeholder="Name..." />
@@ -85,34 +75,20 @@ const HomeMain = styled.div`
 const Body = styled.div`
   width: 90%;
   margin: auto;
-  position: relative;
-`;
-
-const MainImg = styled.img`
-  width: 100%;
-  height: 600px;
-  margin: auto;
-  align-items: center;
   display: flex;
-  object-fit: cover;
-  border-radius: 30px;
-
-  @media (max-width: 1336px) {
-    height: 500px;
-  }
-
-  @media (max-width: 425px) {
-    height: 300px;
-  }
+  flex-direction: column;
+  border-bottom: 1px solid #ffffe3;
+  padding-bottom: 100px;
 `;
 
 const MainBtm = styled.div`
   display: flex;
-  width: 100%;
+  width: 50%;
   margin: auto;
-  position: relative;
-  align-items: center;
-  height: 400px;
+  text-align: left;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  padding-top: 70px;
 
   @media (max-width: 768px) {
     align-items: center;
@@ -129,12 +105,9 @@ const MainBtm = styled.div`
 `;
 
 const Context = styled.div`
-  font-size: 25px;
-  width: 30%;
+  font-size: 16px;
+  width: 60%;
   font-weight: 400;
-  position: absolute;
-  bottom: 10%;
-  right: 12%;
   color: white;
   letter-spacing: 3px;
   line-height: 35px;
@@ -161,10 +134,13 @@ const Context = styled.div`
 `;
 
 const MainPageQuote = styled(MainQuote)`
-  font-size: 120px;
+  font-size: 500px;
   line-height: 120px;
   padding-top: 0;
-  font-family: "Abril Fatface", cursive;
+  font-family: "Exo 2", sans-serif;
+  color: #ffffe3;
+  font-weight: bolder;
+  width: 100%;
 
   @media (max-width: 1336px) {
     font-size: 80px;
@@ -185,31 +161,30 @@ const MainPageQuote = styled(MainQuote)`
 `;
 
 const TitleCont = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -33%);
-  left: 12%;
-
-  @media (max-width: 1336px) {
-    transform: translate(0%, -38%);
-  }
-
-  @media (max-width: 768px) {
-    transform: translate(20%, -140%);
-  }
-
-  @media (max-width: 425px) {
-    transform: translate(5%, -190%);
-  }
+  display: flex;
+  margin: auto;
+  height: 400px;
+  padding-top: 100px;
 `;
 
 const MainPageBtn = styled(MainButn)`
-  position: absolute;
-  left: 12%;
   font-size: 16px;
-  bottom: 10%;
-  background-color: #1b1b1b;
-  border-color: orangered;
+  background-color: #ffffe3;
+  border-radius: 0px;
+  border: 1px solid #ffffe3;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  align-items: center;
+  color: black;
+
+  h2 {
+    font-size: 16px;
+  }
+  img {
+    width: 16px;
+  }
 
   @media (max-width: 1336px) {
     font-size: 10px;
@@ -245,7 +220,8 @@ const ContactBody = styled.div`
   width: 50%;
   flex-direction: column;
   align-items: center;
-  background-color: #1b1b1b;
+  background-color: #ffffe3;
+  border: 1px solid #ffffe3;
   border-radius: 20px;
   top: 10%;
   right: 25%;
@@ -264,11 +240,12 @@ const CloseModalbtn = styled.button`
   left: 45%;
   bottom: -10px;
   padding: 10px;
-  color: orangered;
+  color: black;
   font-size: 40px;
-  background-color: #1b1b1b;
+  background-color: #ffffe3;
   outline: 0;
   border: 0;
+  cursor: pointer;
 
   @media (max-width: 1336px) {
     left: 40%;
@@ -283,8 +260,7 @@ const CloseModalbtn = styled.button`
 const ContactHeader = styled.h1`
   font-size: 70px;
   letter-spacing: 3px;
-  font-family: "Abril Fatface";
-  color: white;
+  color: black;
 
   @media (max-width: 1080px) {
     font-size: 40px;
@@ -307,7 +283,7 @@ const ModalBody = styled.div`
     padding-bottom: 20px;
     padding-top: 20px;
     letter-spacing: 5px;
-    color: white;
+    color: black;
 
     @media (max-width: 1336px) {
       padding-bottom: 15px;
@@ -328,11 +304,11 @@ const ModalBody = styled.div`
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-    background: #1b1b1b;
-    color: white;
+    background: #ffffe3;
+    color: black;
     font-size: 20px;
     outline: 0;
-    border-color: orangered;
+    border-color: black;
 
     @media (max-width: 1080px) {
       width: 70%;
@@ -346,18 +322,20 @@ const ModalBody = styled.div`
 
   button {
     width: 20%;
-    font-size: 20px;
+    font-size: 15px;
     padding: 5px;
     margin-top: 40px;
     margin-bottom: 50px;
     border-radius: 20px;
-    background-color: #1b1b1b;
-    color: white;
+    background-color: #ffffe3;
+    color: black;
     border-width: 1px;
-    border-color: orangered;
+    border-color: black;
 
     &:hover {
-      background-color: orangered;
+      background-color: #1b1b1b;
+      color: #ffffe3;
+      transition: background-color 0.2s ease-in;
     }
 
     @media (max-width: 1336px) {

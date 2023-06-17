@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Projects1 from "./pages/ProjectsMain";
 import "./styles/style.css";
 import Nomatch from "./pages/nomatch";
+import Blogs from "./pages/BlogContent/blogs";
+import Blogsinfo from "./pages/BlogContent/Blogsinfo";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="projects" element={<Projects1 />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="blogs/:slug" element={<Blogsinfo />} />
 
         <Route path="*" element={<Nomatch />} />
       </Routes>

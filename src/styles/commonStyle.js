@@ -9,8 +9,8 @@ export const MainButn = styled.button`
   border-radius: 40px;
 
   &:hover {
-    background-color: orangered;
-    color: white;
+    background-color: #ffffe3;
+    color: black;
     transition-duration: 0.5s;
     transition-delay: 0.1s;
   }
