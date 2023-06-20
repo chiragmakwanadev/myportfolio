@@ -108,6 +108,12 @@ const HomeLink = styled.div`
     color: #ffffe3;
     letter-spacing: 5px;
   }
+
+  @media (max-width: 768px) {
+    a {
+      font-size: 14px;
+    }
+  }
 `;
 
 const NavBar = styled.ul`
@@ -205,7 +211,7 @@ const HamburgerIcon = styled.button`
   span {
     width: 100%;
     height: 1px;
-    background-color: #814141;
+    background-color: #ffffe3;
     transition: all 0.3s ease-in-out;
 
     &:first-child {

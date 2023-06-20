@@ -37,12 +37,15 @@ const CarouselWrapper = styled(motion.div)`
   height: 100%;
   overflow: hidden;
   cursor: grab;
+  border: 1px solid #ffffe3;
+  border-radius: 25px;
 `;
 const InnerCarousel = styled(motion.div)`
   display: flex;
   align-items: center;
   height: 100%;
-  gap: 30px;
+  gap: 10px;
+  padding: 10px;
 `;
 const Item = styled(motion.div)`
   /* height: 500px;
@@ -58,7 +61,11 @@ const Item = styled(motion.div)`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 1px solid #ffffe3;
     border-radius: 20px;
     pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
   }
 `;

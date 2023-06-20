@@ -21,53 +21,53 @@ const marqueeVariants = {
 const Marquee = () => {
   return (
     <div>
-      <MarqueeWrapper>
+      <MarqueeWrapper data-aos="fade-up">
         {/* 3. Using framer motion */}
         <Track variants={marqueeVariants} animate="animate">
           <React1>React</React1>
+          <Next>Next.js</Next>
           <Java>JavaScript</Java>
           <Type>TypeScript</Type>
           <Html>HTML</Html>
           <Css>CSS</Css>
-          <Figma>Figma</Figma>
           <Sanity>Sanity</Sanity>
           <Framer>Framer Motion</Framer>
           <Tail>Tailwind</Tail>
           <Boot>Bootstrap</Boot>
+          <Figma>Figma</Figma>
           <Vercel>Vercel</Vercel>
           <Net>Netlify</Net>
           <Git>Github</Git>
-          <Next>Next.js</Next>
           <Slack>Slack</Slack>
           <React1>React</React1>
+          <Next>Next.js</Next>
           <Java>JavaScript</Java>
           <Type>TypeScript</Type>
           <Html>HTML</Html>
           <Css>CSS</Css>
-          <Figma>Figma</Figma>
           <Sanity>Sanity</Sanity>
           <Framer>Framer Motion</Framer>
           <Tail>Tailwind</Tail>
           <Boot>Bootstrap</Boot>
+          <Figma>Figma</Figma>
           <Vercel>Vercel</Vercel>
           <Net>Netlify</Net>
           <Git>Github</Git>
-          <Next>Next.js</Next>
           <Slack>Slack</Slack>
           <React1>React</React1>
+          <Next>Next.js</Next>
           <Java>JavaScript</Java>
           <Type>TypeScript</Type>
           <Html>HTML</Html>
           <Css>CSS</Css>
-          <Figma>Figma</Figma>
           <Sanity>Sanity</Sanity>
           <Framer>Framer Motion</Framer>
           <Tail>Tailwind</Tail>
           <Boot>Bootstrap</Boot>
+          <Figma>Figma</Figma>
           <Vercel>Vercel</Vercel>
           <Net>Netlify</Net>
           <Git>Github</Git>
-          <Next>Next.js</Next>
           <Slack>Slack</Slack>
         </Track>
       </MarqueeWrapper>
@@ -194,7 +194,6 @@ const Next = styled.h1`
   background-image: url("/images/next.jpg");
   background-size: cover;
   color: transparent;
-  border-radius: 20%;
 `;
 const Slack = styled.h1`
   background-image: url("/images/slack.png");

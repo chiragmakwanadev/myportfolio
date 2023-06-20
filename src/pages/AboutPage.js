@@ -15,22 +15,46 @@ const About = () => {
     <AboutMain>
       <AboutBody>
         <Top>
-          <AboutIntro>
+          <AboutIntro data-aos="zoom-out-right">
             Perfection is achieved not when there is nothing more to add, but
             rather when there is nothing more to take away.
           </AboutIntro>
-          <button onClick={handleClick}>Explore !</button>
+          <button data-aos="zoom-out-left" onClick={handleClick}>
+            Explore !
+          </button>
         </Top>
-        <AboutMainQuote>AboutMe</AboutMainQuote>
+        <AboutMainQuote>
+          <span data-aos="flip-right" data-aos-delay="700">
+            A
+          </span>
+          <span data-aos="flip-right" data-aos-delay="800">
+            b
+          </span>
+          <span data-aos="flip-right" data-aos-delay="900">
+            o
+          </span>
+          <span data-aos="flip-right" data-aos-delay="1000">
+            u
+          </span>
+          <span data-aos="flip-right" data-aos-delay="1100">
+            t
+          </span>
+          <span data-aos="flip-right" data-aos-delay="1200">
+            M
+          </span>
+          <span data-aos="flip-right" data-aos-delay="1300">
+            e
+          </span>
+        </AboutMainQuote>
       </AboutBody>
       <Bottom>
-        <Quote>
+        <Quote data-aos="fade-down">
           <h1>"Code is like humor. When you have to explain it, it’s bad."</h1>
           <h2>– Cory House</h2>
         </Quote>
         <AboutMe>
-          <h1>Who am i?</h1>
-          <h2>
+          <h1 data-aos="fade-up">Who am i?</h1>
+          <h2 data-aos="fade-down">
             Introducing the one and only me, a front-end developer with a knack
             for creating jaw-dropping websites and bringing laughter to the
             digital world. Armed with HTML, CSS, and JavaScript, they weave
@@ -100,6 +124,7 @@ const AboutMainQuote = styled(MainQuote)`
   font-weight: bolder;
   padding-top: 200px;
   color: #ffffe3;
+  display: flex;
   /* padding-top: 200px; */
 
   @media (max-width: 1336px) {

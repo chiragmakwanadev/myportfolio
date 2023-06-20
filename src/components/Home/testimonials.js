@@ -1,28 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Testimos } from "../../data/testimonialdata";
 import styled from "styled-components";
-
 import Carousel from "react-material-ui-carousel";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 const Testimonials = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSlideChange = (index) => {
+    setActiveIndex(index);
+  };
   return (
     <Testi>
-      <Upper>
+      <Upper data-aos="fade-down">
         <BlackHeaderStyle>Testimonial</BlackHeaderStyle>
         <TestMainQuote>
           <h1>My happy Clients.</h1>
         </TestMainQuote>
       </Upper>
-      <Bottom>
+      <Bottom data-aos="fade-up" data-aos-delay="500">
         <Carousel
+          autoPlay={false}
+          animation="slide"
+          swipe={true}
+          onChange={handleSlideChange}
           indicatorContainerProps={{
             style: {
               marginTop: "70px", // 5
               textAlign: "center", // 4
               width: {
-                xs: 100,
+                xs: 50,
                 sm: 200,
                 md: 300,
               },
@@ -36,7 +44,7 @@ const Testimonials = () => {
               opacity: 1,
               top: 10,
               width: {
-                xs: 100,
+                xs: 50,
                 sm: 200,
                 md: 300,
               },
@@ -52,9 +60,10 @@ const Testimonials = () => {
           NextIcon={<ArrowForwardIosIcon />}
           PrevIcon={<ArrowBackIosNewIcon />}
         >
-          {Testimos.map((test) => {
+          {Testimos.map((test, index) => {
+            const isActive = index === activeIndex;
             return (
-              <Border key={test.id}>
+              <Border key={test.id} className={isActive ? "active" : ""}>
                 <Context>{test.context}</Context>
                 <Footer>
                   <FooterLeft>
@@ -81,6 +90,10 @@ const Testi = styled.section`
   @media (max-width: 768px) {
     padding-bottom: 100px;
   }
+
+  @media (max-width: 425px) {
+    padding-bottom: 40px;
+  }
 `;
 
 const BlackHeaderStyle = styled.h1`
@@ -106,6 +119,12 @@ const TestMainQuote = styled.div`
     font-size: 100px;
     color: #ffffe3;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 70px;
+    }
+  }
 `;
 
 const Upper = styled.div`
@@ -116,6 +135,10 @@ const Upper = styled.div`
   align-items: center;
   flex-direction: column;
   padding-top: 100px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const Bottom = styled.div`
@@ -126,6 +149,9 @@ const Bottom = styled.div`
     padding-top: 70px;
     width: 90%;
   }
+  @media (max-width: 540px) {
+    width: 100%;
+  }
 `;
 const Border = styled.div`
   width: 60%;
@@ -134,8 +160,13 @@ const Border = styled.div`
   flex-direction: column;
 
   @media (max-width: 1336px) {
-    width: 70%;
+    width: 80%;
   }
+
+  @media (max-width: 1080px) {
+    width: 80%;
+  }
+
   @media (max-width: 768px) {
     width: 70%;
   }
@@ -154,19 +185,30 @@ const Context = styled.div`
   text-align: center;
   height: 200px;
 
+  @media (max-width: 1336px) {
+    font-size: 16px;
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+
   @media (max-width: 1080px) {
     font-size: 15px;
-    height: 170px;
+    height: 200px;
   }
 
   @media (max-width: 950px) {
     font-size: 13px;
-    height: 170px;
+    height: 200px;
   }
 
   @media (max-width: 768px) {
     font-size: 13px;
     line-height: 30px;
+  }
+
+  @media (max-width: 540px) {
+    font-size: 10px;
+    font-weight: lighter;
   }
 
   @media (max-width: 425px) {
@@ -210,6 +252,7 @@ const Footer = styled.div`
   flex-direction: row;
   align-items: center;
   padding-bottom: 20px;
+  transition-delay: 0.2s;
 
   h2 {
     font-size: 20px;

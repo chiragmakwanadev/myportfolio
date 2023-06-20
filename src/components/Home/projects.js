@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { HeaderStyle } from "../../styles/commonStyle";
 import { useNavigate } from "react-router-dom";
@@ -14,17 +14,17 @@ const Projects = () => {
   return (
     <ProjectBody>
       <ProjectUpper>
-        <ProjectMainQuote>
+        <ProjectMainQuote data-aos="fade-up" data-aos-delay="800">
           <h1>Moments</h1>
           <h2>we capture.</h2>
         </ProjectMainQuote>
-        <Context>
+        <Context data-aos="fade-down">
           Explore a selection of frontend projects featuring elegant designs and
           user-friendly interfaces.
         </Context>
       </ProjectUpper>
       <Bottom>
-        <ProjectLeft>
+        <ProjectLeft data-aos="fade-right" data-aos-delay="800">
           <BlackHeader>PROJECT</BlackHeader>
           <Context2>
             Your website is the center of your digital eco-system, like a brick
@@ -36,7 +36,7 @@ const Projects = () => {
             <ProButn onClick={handleClick}>VIEW PROJECT</ProButn>
           </div>
         </ProjectLeft>
-        <Right>
+        <Right data-aos="fade-left" data-aos-delay="900">
           <Carousel />
         </Right>
       </Bottom>
@@ -67,6 +67,10 @@ const ProjectUpper = styled.div`
     padding-top: 70px;
   }
 
+  @media (max-width: 540px) {
+    width: 100%;
+  }
+
   @media (max-width: 425px) {
     width: 90%;
   }
@@ -82,6 +86,16 @@ const Context = styled.div`
   text-align: center;
   color: #ffffe3;
   padding-bottom: 100px;
+
+  @media (max-width: 1440px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    width: 100%;
+  }
+
   @media (max-width: 425px) {
     font-size: 15px;
     padding-top: 50px;
@@ -97,7 +111,9 @@ const Context2 = styled.div`
   color: #ffffe3;
 
   @media (max-width: 1336px) {
-    font-size: 20px;
+    font-size: 16px;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
 
   @media (max-width: 1080px) {
@@ -118,13 +134,14 @@ const BlackHeader = styled(HeaderStyle)`
 
 const Bottom = styled.div`
   display: flex;
-  width: 90%;
+  width: 95%;
   margin: auto;
   flex-direction: row;
   padding: 100px 0px;
 
   @media (max-width: 1080px) {
     flex-direction: column-reverse;
+    padding-top: 30px;
   }
 
   @media (max-width: 425px) {
@@ -146,14 +163,32 @@ const ProjectLeft = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media (max-width: 540px) {
+    width: 100%;
+  }
 `;
 
 const Right = styled.div`
   display: flex;
   width: 60%;
 
+  @media (max-width: 1440px) {
+    width: 60%;
+  }
+
+  @media (max-width: 1080px) {
+    width: 100%;
+    height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 300px;
+  }
+
   @media (max-width: 425px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
@@ -175,15 +210,22 @@ const ProButn = styled.button`
     transition-delay: 0.2s;
   }
 
-  @media (max-width: 1336px) {
+  @media (max-width: 1440px) {
     width: 130px;
     margin: 0;
     font-size: 10px;
   }
 
-  @media (max-width: 1080px) {
-    width: 110px;
+  @media (max-width: 1336px) {
+    width: 130px;
     margin: 0;
+    font-size: 10px;
+    margin-top: 0px;
+  }
+
+  @media (max-width: 1080px) {
+    width: 140px;
+    padding: 10px;
     font-size: 10px;
   }
 `;
@@ -202,5 +244,14 @@ const ProjectMainQuote = styled.h1`
   h2 {
     font-size: 100px;
     color: #ffffe3;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 70px;
+    }
+    h2 {
+      font-size: 70px;
+    }
   }
 `;

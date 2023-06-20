@@ -7,7 +7,7 @@ const Footer = () => {
     <>
       <FooterMain>
         <Header>
-          <div>✻ MORSE'S STUDIO</div>
+          <h1>MORSE'S STUDIO.</h1>
           <div>
             <div>follow me on:</div>
             <NavLinks>
@@ -37,10 +37,7 @@ const Footer = () => {
           </div>
         </Header>
         <FooterBody>
-          <FooterMainQuote>
-            Keep in touch with me <br />
-            say hi!
-          </FooterMainQuote>
+          <FooterMainQuote>Keep in touch with me say hi!</FooterMainQuote>
           <Email>
             <a href="mailto: chiragmakwanadev@gmail.com">
               {" "}
@@ -90,6 +87,22 @@ const Header = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-top: 100px;
+
+  h1 {
+    text-decoration: none;
+    color: orangered;
+    font-size: 20px;
+    font-family: "Gasoek One", sans-serif;
+    font-weight: 600;
+    color: #ffffe3;
+    letter-spacing: 5px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 `;
 
 const NavLinks = styled.div`
@@ -114,7 +127,7 @@ const NavLinks = styled.div`
 
   @media (max-width: 768px) {
     img {
-      width: 20px;
+      width: 30px;
     }
   }
 `;
@@ -147,6 +160,11 @@ const Email = styled.div`
     }
   }
 
+  @media (max-width: 768px) {
+    font-size: 20px;
+    padding-top: 50px;
+  }
+
   @media (max-width: 425px) {
     font-size: 20px;
   }
@@ -164,11 +182,16 @@ const FooterBottom = styled.div`
 
   @media (max-width: 768px) {
     padding-bottom: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 50px;
+    gap: 20px;
+    font-size: 20px;
   }
 
   @media (max-width: 425px) {
     width: 90%;
-    font-size: 10px;
+    font-size: 20px;
   }
 `;
 
@@ -184,6 +207,7 @@ const NavBar = styled.div`
 
     @media (max-width: 768px) {
       gap: 10px;
+      flex-direction: column;
     }
   }
   li {
@@ -203,12 +227,19 @@ const NavBar = styled.div`
 const FooterMainQuote = styled.h1`
   font-size: 100px;
   line-height: 100px;
+  width: 60%;
 
   @media (max-width: 1080px) {
     width: 80%;
   }
 
+  @media (max-width: 768px) {
+    width: 80%;
+    font-size: 70px;
+  }
+
   @media (max-width: 425px) {
     font-size: 40px;
+    line-height: 50px;
   }
 `;

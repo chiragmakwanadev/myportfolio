@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { MainButn, MainQuote } from "../../styles/commonStyle";
-
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -29,9 +28,28 @@ const MainPage = () => {
       <HomeMain>
         <Body>
           <TitleCont>
-            <MainPageQuote colorStyle="black">YOKOSO</MainPageQuote>
+            <MainPageQuote data-aos-once="true">
+              <span data-aos="fade-down" data-aos-delay="600">
+                Y
+              </span>
+              <span data-aos="fade-down" data-aos-delay="700">
+                O
+              </span>
+              <span data-aos="fade-down" data-aos-delay="800">
+                K
+              </span>
+              <span data-aos="fade-down" data-aos-delay="900">
+                O
+              </span>
+              <span data-aos="fade-down" data-aos-delay="1000">
+                S
+              </span>
+              <span data-aos="fade-down" data-aos-delay="1100">
+                O
+              </span>
+            </MainPageQuote>
           </TitleCont>
-          <MainBtm>
+          <MainBtm data-aos="fade-up">
             <MainPageBtn onClick={handleClick}>
               <h2>Let's talk</h2>
               <img src="/images/right.svg" alt="" />
@@ -87,13 +105,29 @@ const MainBtm = styled.div`
   margin: auto;
   text-align: left;
   flex-direction: column-reverse;
-  align-items: flex-start;
   padding-top: 70px;
+
+  @media (max-width: 1440px) {
+    align-items: center;
+    flex-direction: column-reverse;
+    padding-top: 50px;
+  }
+
+  @media (max-width: 1080px) {
+    align-items: center;
+    flex-direction: column-reverse;
+    padding-top: 20px;
+    width: 80%;
+  }
 
   @media (max-width: 768px) {
     align-items: center;
     flex-direction: column-reverse;
-    padding-top: 50px;
+    margin-top: -150px;
+  }
+
+  @media (max-width: 540px) {
+    width: 90%;
   }
 
   /* @media (max-width: 768px) {
@@ -108,22 +142,23 @@ const Context = styled.div`
   font-size: 16px;
   width: 60%;
   font-weight: 400;
-  color: white;
+  color: #ffffe3;
   letter-spacing: 3px;
   line-height: 35px;
 
+  @media (max-width: 1440px) {
+    width: 90%;
+    text-align: center;
+  }
+
   @media (max-width: 1080px) {
-    width: 40%;
-    font-size: 20px;
+    width: 90%;
+    font-size: 12px;
   }
 
   @media (max-width: 768px) {
     width: 80%;
     font-size: 13px;
-    position: relative;
-    right: auto;
-    bottom: auto;
-    text-align: center;
   }
 
   /* @media (max-width: 1080px) {
@@ -134,29 +169,38 @@ const Context = styled.div`
 `;
 
 const MainPageQuote = styled(MainQuote)`
-  font-size: 500px;
+  font-size: 490px;
   line-height: 120px;
   padding-top: 0;
   font-family: "Exo 2", sans-serif;
   color: #ffffe3;
   font-weight: bolder;
   width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 1440px) {
+    font-size: 350px;
+    line-height: 80px;
+  }
 
   @media (max-width: 1336px) {
-    font-size: 80px;
+    font-size: 250px;
     line-height: 80px;
-    /* color : ${(props) => props.colorStyle === "white" && "black"} */
+  }
+
+  @media (max-width: 1080px) {
+    font-size: 200px;
+    line-height: 80px;
   }
 
   @media (max-width: 768px) {
-    font-size: 50px;
+    font-size: 120px;
     line-height: 50px;
-    color: ${(props) => props.colorStyle === "black" && "white"};
   }
 
-  @media (max-width: 425px) {
-    font-size: 30px;
-    line-height: 30px;
+  @media (max-width: 540px) {
+    font-size: 100px;
   }
 `;
 
@@ -165,6 +209,7 @@ const TitleCont = styled.div`
   margin: auto;
   height: 400px;
   padding-top: 100px;
+  width: 90%;
 `;
 
 const MainPageBtn = styled(MainButn)`
@@ -185,6 +230,12 @@ const MainPageBtn = styled(MainButn)`
   }
   img {
     width: 16px;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 10px;
+    width: 140px;
+    padding: 10px;
   }
 
   @media (max-width: 1336px) {
@@ -218,10 +269,10 @@ const ContactBody = styled.div`
   display: flex;
   position: sticky;
   margin: auto;
-  width: 50%;
+  width: 30%;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffe3;
+  background-image: url(/images/modal.jpg);
   border: 1px solid #ffffe3;
   border-radius: 20px;
   top: 10%;
@@ -243,7 +294,7 @@ const CloseModalbtn = styled.button`
   padding: 10px;
   color: black;
   font-size: 40px;
-  background-color: #ffffe3;
+  background-color: transparent;
   outline: 0;
   border: 0;
   cursor: pointer;
@@ -305,7 +356,7 @@ const ModalBody = styled.div`
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-    background: #ffffe3;
+    background: transparent;
     color: black;
     font-size: 20px;
     outline: 0;
@@ -328,7 +379,7 @@ const ModalBody = styled.div`
     margin-top: 40px;
     margin-bottom: 50px;
     border-radius: 20px;
-    background-color: #ffffe3;
+    background-color: transparent;
     color: black;
     border-width: 1px;
     border-color: black;

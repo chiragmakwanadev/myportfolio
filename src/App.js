@@ -7,8 +7,15 @@ import "./styles/style.css";
 import Nomatch from "./pages/nomatch";
 import Blogs from "./pages/BlogContent/blogs";
 import Blogsinfo from "./pages/BlogContent/Blogsinfo";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    Aos.init({ once: true });
+  }, []);
+
   return (
     <Layout>
       <Routes>
