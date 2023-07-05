@@ -16,30 +16,30 @@ const Projects1 = () => {
     <ProjectMain>
       <ProjectUpper>
         <Quote>
-          <span data-aos="fade-up" data-aos-delay="600">
+          <Letter data-aos="fade-up" data-aos-delay="600">
             P
-          </span>
-          <span data-aos="fade-up" data-aos-delay="700">
+          </Letter>
+          <Letter data-aos="fade-up" data-aos-delay="700">
             r
-          </span>
-          <span data-aos="fade-up" data-aos-delay="800">
+          </Letter>
+          <Letter data-aos="fade-up" data-aos-delay="800">
             o
-          </span>
-          <span data-aos="fade-up" data-aos-delay="900">
+          </Letter>
+          <Letter data-aos="fade-up" data-aos-delay="900">
             j
-          </span>
-          <span data-aos="fade-up" data-aos-delay="1000">
+          </Letter>
+          <Letter data-aos="fade-up" data-aos-delay="1000">
             e
-          </span>
-          <span data-aos="fade-up" data-aos-delay="1100">
+          </Letter>
+          <Letter data-aos="fade-up" data-aos-delay="1100">
             c
-          </span>
-          <span data-aos="fade-up" data-aos-delay="1200">
+          </Letter>
+          <Letter data-aos="fade-up" data-aos-delay="1200">
             t
-          </span>
-          <span data-aos="fade-up" data-aos-delay="1300">
+          </Letter>
+          <Letter data-aos="fade-up" data-aos-delay="1300">
             s
-          </span>
+          </Letter>
         </Quote>
         <UpperContext data-aos="fade-down" data-aos-delay="2000">
           Welcome to my project page! As a front-end developer, I'm excited to
@@ -53,7 +53,7 @@ const Projects1 = () => {
           your visit!
         </UpperContext>
       </ProjectUpper>
-      <ProjectBottom>
+      <ProjectBottom data-aos="fade-down" data-aos-delay="800">
         <Carousel
           autoPlay={false}
           animation="slide"
@@ -100,7 +100,7 @@ const Projects1 = () => {
             return (
               <>
                 <Border key={test.id} className={isActive ? "active" : ""}>
-                  <Left data-aos="fade-down">
+                  <Left data-aos="fade-down" data-aos-delay="1200">
                     <ul>
                       {test.skills.map((skill) => {
                         return <li>{skill}</li>;
@@ -157,6 +157,17 @@ const Quote = styled.h1`
   font-family: "Exo 2", sans-serif;
   display: flex;
   justify-content: center;
+`;
+
+const Letter = styled.span`
+  display: inline-block;
+  background-image: url(/images/image2/mainbody2.jpg);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  background-position: center top;
 `;
 
 const ProjectBottom = styled.div`
@@ -227,7 +238,7 @@ const Right = styled.div`
     right: 0;
     bottom: 0;
     object-fit: cover;
-    opacity: 0.2;
+    opacity: 0.3;
   }
   h1 {
     font-size: 70px;

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Marquee from "../utils/Marquee";
-import { MainQuote } from "../styles/commonStyle";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
@@ -20,31 +19,31 @@ const About = () => {
             rather when there is nothing more to take away.
           </AboutIntro>
           <button data-aos="zoom-out-left" onClick={handleClick}>
-            Explore !
+            <h1>Explore !</h1>
           </button>
         </Top>
         <AboutMainQuote>
-          <span data-aos="flip-right" data-aos-delay="700">
+          <Letter data-aos="zoom-in-left" data-aos-delay="700">
             A
-          </span>
-          <span data-aos="flip-right" data-aos-delay="800">
+          </Letter>
+          <Letter data-aos="zoom-in-left" data-aos-delay="800">
             b
-          </span>
-          <span data-aos="flip-right" data-aos-delay="900">
+          </Letter>
+          <Letter data-aos="zoom-in-left" data-aos-delay="900">
             o
-          </span>
-          <span data-aos="flip-right" data-aos-delay="1000">
+          </Letter>
+          <Letter data-aos="zoom-in-left" data-aos-delay="1000">
             u
-          </span>
-          <span data-aos="flip-right" data-aos-delay="1100">
+          </Letter>
+          <Letter data-aos="zoom-in-left" data-aos-delay="1100">
             t
-          </span>
-          <span data-aos="flip-right" data-aos-delay="1200">
+          </Letter>
+          <Letter data-aos="zoom-in-left" data-aos-delay="1200">
             M
-          </span>
-          <span data-aos="flip-right" data-aos-delay="1300">
+          </Letter>
+          <Letter data-aos="zoom-in-left" data-aos-delay="1300">
             e
-          </span>
+          </Letter>
         </AboutMainQuote>
       </AboutBody>
       <Bottom>
@@ -77,7 +76,7 @@ const AboutMain = styled.div`
   width: 100%;
   margin: auto;
   padding-bottom: 150px;
-  padding-top: 100px;
+  padding-top: 30px;
 
   @media (max-width: 425px) {
     padding-bottom: 70px;
@@ -101,28 +100,53 @@ const Top = styled.div`
     width: 250px;
     height: 250px;
     border-radius: 100%;
-    border: 1px solid #ffffe3;
+    border: 1px solid #297573;
     background-color: #1b1b1b;
-    color: #ffffe3;
-    font-size: 30px;
-    font-weight: bold;
     cursor: pointer;
+    transition: 2s;
+
+    h1 {
+      font-size: 30px;
+      color: #ffffe3;
+      font-weight: bold;
+      transition: 0.5s;
+    }
 
     &:hover {
       background-color: #ffffe3;
       color: #1b1b1b;
-      transition: background-color 0.2s ease-in;
+      transition: 1s;
+      transition-timing-function: linear;
       border-color: #1b1b1b;
-      transition-delay: 0.2s;
+
+      h1 {
+        padding-right: 30px;
+        font-size: 30px;
+        color: black;
+        font-weight: bold;
+        transition: 0.4s;
+        transition-timing-function: linear;
+      }
     }
   }
 `;
 
-const AboutMainQuote = styled(MainQuote)`
+const Letter = styled.span`
+  display: inline-block;
+  background-image: url(/images/image2/project1.jpg);
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  background-position: center top;
+`;
+
+const AboutMainQuote = styled.h1`
   font-size: 450px;
   font-family: "Exo 2", sans-serif;
   font-weight: bolder;
-  padding-top: 200px;
+
   color: #ffffe3;
   display: flex;
   /* padding-top: 200px; */
@@ -157,10 +181,9 @@ const Bottom = styled.div`
   flex-direction: column;
   padding-top: 150px;
   align-items: center;
-  padding-top: 400px;
 `;
 const Quote = styled.div`
-  border-left: 1px solid white;
+  border-left: 2px solid #297573;
   padding-left: 20px;
   h1 {
     font-family: "Dancing Script", cursive;

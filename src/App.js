@@ -17,17 +17,18 @@ function App() {
   }, []);
 
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="projects" element={<Projects1 />} />
-        <Route path="blogs" element={<Blogs />} />
-        <Route path="blogs/:slug" element={<Blogsinfo />} />
-
-        <Route path="*" element={<Nomatch />} />
-      </Routes>
-    </Layout>
+    <div style={{ backgroundColor: "#1b1b1b" }}>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="projects" element={<Projects1 />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="blogs/:slug" element={<Blogsinfo />} />
+          <Route path="*" element={<Nomatch />} />
+        </Routes>
+      </Layout>
+    </div>
   );
 }
 

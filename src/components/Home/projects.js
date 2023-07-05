@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { HeaderStyle } from "../../styles/commonStyle";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +36,7 @@ const Projects = () => {
             <ProButn onClick={handleClick}>VIEW PROJECT</ProButn>
           </div>
         </ProjectLeft>
-        <Right data-aos="fade-left" data-aos-delay="900">
+        <Right data-aos="fade-right" data-aos-delay="900">
           <Carousel />
         </Right>
       </Bottom>

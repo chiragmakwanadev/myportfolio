@@ -26,11 +26,11 @@ const Header = () => {
 
   return (
     <HeaderMain currentLocation={location.pathname}>
-      <HomeLink>
+      <HomeLink data-aos="fade-down" data-aos-delay="1000">
         <Link to="/">MORSE'S STUDIO.</Link>
       </HomeLink>
       <nav>
-        <NavBar>
+        <NavBar data-aos="fade-down" data-aos-delay="1000">
           <ul>
             <li>
               <Link to="/">Home</Link>

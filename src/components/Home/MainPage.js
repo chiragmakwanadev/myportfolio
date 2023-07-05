@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { MainButn, MainQuote } from "../../styles/commonStyle";
-import { useState } from "react";
-import { useEffect } from "react";
+import { MainButn } from "../../styles/commonStyle";
+import { useState, useEffect } from "react";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { motion, AnimatePresence } from "framer-motion";
 
 const MainPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,61 +25,103 @@ const MainPage = () => {
   }, [isOpen]);
 
   return (
-    <div className="App">
+    <>
       <HomeMain>
         <Body>
           <TitleCont>
             <MainPageQuote data-aos-once="true">
-              <span data-aos="fade-down" data-aos-delay="600">
+              <Letter data-aos="fade-down" data-aos-delay="600">
                 Y
-              </span>
-              <span data-aos="fade-down" data-aos-delay="700">
+              </Letter>
+              <Letter data-aos="fade-down" data-aos-delay="700">
                 O
-              </span>
-              <span data-aos="fade-down" data-aos-delay="800">
+              </Letter>
+              <Letter data-aos="fade-down" data-aos-delay="800">
                 K
-              </span>
-              <span data-aos="fade-down" data-aos-delay="900">
+              </Letter>
+              <Letter data-aos="fade-down" data-aos-delay="900">
                 O
-              </span>
-              <span data-aos="fade-down" data-aos-delay="1000">
+              </Letter>
+              <Letter data-aos="fade-down" data-aos-delay="1000">
                 S
-              </span>
-              <span data-aos="fade-down" data-aos-delay="1100">
+              </Letter>
+              <Letter data-aos="fade-down" data-aos-delay="1100">
                 O
-              </span>
+              </Letter>
             </MainPageQuote>
           </TitleCont>
           <MainBtm data-aos="fade-up">
             <MainPageBtn onClick={handleClick}>
               <h2>Let's talk</h2>
-              <img src="/images/right.svg" alt="" />
+              <AiOutlineArrowRight
+                style={{
+                  border: "1px solid #ffffe3",
+                  width: "50px",
+                  height: "50px",
+                  padding: "5px",
+                  borderRadius: "100%",
+                  color: "black",
+                  backgroundColor: "#ffffe3",
+                }}
+              />
             </MainPageBtn>
             <Context>
-              an FrontEnd Web Developer based in Surat,Gujarat,India. Currently
-              working as a freelancer ... :)
+              "Hi there! I'm a Surat-based Front-End Web Developer, crafting
+              captivating online experiences. Currently freelancing and ready to
+              transform your ideas into reality!"
             </Context>
           </MainBtm>
         </Body>
-        {isOpen && (
-          <Body2>
-            <ContactBody>
-              <CloseModalbtn onClick={handleClick}>&times;</CloseModalbtn>
-              <ContactHeader>Contact-Me.</ContactHeader>
-              <ModalBody>
-                <label> Name</label>
-                <input type="text" placeholder="Name..." />
-                <label>Email</label>
-                <input type="email" placeholder="Email..." />
-                <label>Message</label>
-                <textarea />
-                <button onClick={handleClick}>SUBMIT</button>
-              </ModalBody>
-            </ContactBody>
-          </Body2>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <Body2>
+              <ContactBody
+                initial={{ opacity: 1, y: 300 }}
+                animate={{ opacity: 1, y: -10 }}
+                exit={{ opacity: 1, y: 1000 }}
+                transition={{ duration: 0.5 }}
+              >
+                <CloseModalbtn onClick={handleClick}>&times;</CloseModalbtn>
+                <ContactHeader data-aos="fade-down" data-aos-delay="600">
+                  Contact-Me.
+                </ContactHeader>
+                <ModalBody>
+                  <label data-aos="fade-up" data-aos-delay="600">
+                    Name
+                  </label>
+                  <input
+                    data-aos="fade-up"
+                    data-aos-delay="700"
+                    type="text"
+                    placeholder="Name..."
+                  />
+                  <label data-aos="fade-up" data-aos-delay="800">
+                    Email
+                  </label>
+                  <input
+                    data-aos="fade-up"
+                    data-aos-delay="900"
+                    type="email"
+                    placeholder="Email..."
+                  />
+                  <label data-aos="fade-up" data-aos-delay="1000">
+                    Message
+                  </label>
+                  <textarea data-aos="fade-up" data-aos-delay="1100" />
+                  <button
+                    data-aos="fade-up"
+                    data-aos-delay="1200"
+                    onClick={handleClick}
+                  >
+                    SUBMIT
+                  </button>
+                </ModalBody>
+              </ContactBody>
+            </Body2>
+          )}
+        </AnimatePresence>
       </HomeMain>
-    </div>
+    </>
   );
 };
 
@@ -87,7 +130,6 @@ export default MainPage;
 const HomeMain = styled.div`
   background-color: #1b1b1b;
   margin: auto;
-  padding-top: 100px;
 `;
 
 const Body = styled.div`
@@ -96,12 +138,12 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #ffffe3;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
 `;
 
 const MainBtm = styled.div`
   display: flex;
-  width: 50%;
+  width: 100%;
   margin: auto;
   text-align: left;
   flex-direction: column-reverse;
@@ -129,21 +171,14 @@ const MainBtm = styled.div`
   @media (max-width: 540px) {
     width: 90%;
   }
-
-  /* @media (max-width: 768px) {
-    width: 100%;
-    flex-direction: column-reverse;
-    margin: auto;
-    padding-bottom: 50px;
-  } */
 `;
 
 const Context = styled.div`
   font-size: 16px;
   width: 60%;
-  font-weight: 400;
+  font-weight: lighter;
   color: #ffffe3;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   line-height: 35px;
 
   @media (max-width: 1440px) {
@@ -160,24 +195,26 @@ const Context = styled.div`
     width: 80%;
     font-size: 13px;
   }
-
-  /* @media (max-width: 1080px) {
-    width: 50%;
-    margin: auto;
-    font-size: 20px;
-  } */
+`;
+const Letter = styled.span`
+  display: inline-block;
+  background-image: url(/images/image2/project3.jpg);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  background-position: center top;
 `;
 
-const MainPageQuote = styled(MainQuote)`
-  font-size: 490px;
-  line-height: 120px;
-  padding-top: 0;
+const MainPageQuote = styled.h1`
+  font-size: 450px;
   font-family: "Exo 2", sans-serif;
-  color: #ffffe3;
   font-weight: bolder;
   width: 100%;
   display: flex;
   justify-content: center;
+  object-fit: cover;
 
   @media (max-width: 1440px) {
     font-size: 350px;
@@ -207,26 +244,35 @@ const MainPageQuote = styled(MainQuote)`
 const TitleCont = styled.div`
   display: flex;
   margin: auto;
-  height: 400px;
-  padding-top: 100px;
+
   width: 90%;
 `;
 
 const MainPageBtn = styled(MainButn)`
-  font-size: 16px;
-  background-color: #ffffe3;
-  border-radius: 0px;
-  border: 1px solid #ffffe3;
+  background-color: transparent;
+  border: 1px solid transparent;
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
-  width: 20%;
+  width: 15%;
   align-items: center;
-  color: black;
+  color: #ffffe3;
   cursor: pointer;
+  padding: 10px;
+  transition: 1s;
+
+  &:hover {
+    padding: 10px;
+    background-color: transparent;
+    color: #ffffe3;
+    width: 20%;
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+  }
 
   h2 {
-    font-size: 16px;
+    font-size: 20px;
+    letter-spacing: 4px;
   }
   img {
     width: 16px;
@@ -256,27 +302,23 @@ const MainPageBtn = styled(MainButn)`
   }
 `;
 
-const Body2 = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  backdrop-filter: blur(20px);
-`;
+const Body2 = styled.div``;
 
-const ContactBody = styled.div`
+const ContactBody = styled(motion.div)`
   display: flex;
-  position: sticky;
+  position: fixed;
   margin: auto;
-  width: 30%;
+  width: 100%;
+  padding-top: 50px;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-image: url(/images/modal.jpg);
-  border: 1px solid #ffffe3;
-  border-radius: 20px;
-  top: 10%;
-  right: 25%;
+  background-color: #1b1b1b;
+  box-shadow: -2px -31px 19px -1px rgba(0, 0, 0, 0.42);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
   @media (max-width: 768px) {
     width: 80%;
@@ -287,12 +329,11 @@ const ContactBody = styled.div`
 
 const CloseModalbtn = styled.button`
   display: flex;
-  margin: auto;
   position: relative;
-  left: 45%;
-  bottom: -10px;
+  left: 47%;
+  top: 5px;
   padding: 10px;
-  color: black;
+  color: #ffffe3;
   font-size: 40px;
   background-color: transparent;
   outline: 0;
@@ -310,9 +351,9 @@ const CloseModalbtn = styled.button`
   }
 `;
 const ContactHeader = styled.h1`
-  font-size: 70px;
+  font-size: 100px;
   letter-spacing: 3px;
-  color: black;
+  color: #ffffe3;
 
   @media (max-width: 1080px) {
     font-size: 40px;
@@ -324,18 +365,19 @@ const ContactHeader = styled.h1`
   }
 `;
 const ModalBody = styled.div`
-  width: 100%;
+  width: 60%;
   display: flex;
   margin: auto;
   flex-direction: column;
   padding-bottom: 20px;
-  align-items: center;
+  align-items: flex-start;
+  /* justify-content: center; */
 
   label {
     padding-bottom: 20px;
-    padding-top: 20px;
+    padding-top: 40px;
     letter-spacing: 5px;
-    color: black;
+    color: #ffffe3;
 
     @media (max-width: 1336px) {
       padding-bottom: 15px;
@@ -351,16 +393,16 @@ const ModalBody = styled.div`
   textarea {
     display: flex;
     margin: auto;
-    width: 40%;
+    width: 100%;
     height: 40px;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     background: transparent;
-    color: black;
+    color: #ffffe3;
     font-size: 20px;
     outline: 0;
-    border-color: black;
+    border-color: #ffffe3;
 
     @media (max-width: 1080px) {
       width: 70%;
@@ -373,21 +415,21 @@ const ModalBody = styled.div`
   }
 
   button {
-    width: 20%;
-    font-size: 15px;
-    padding: 5px;
+    width: 25%;
+    font-size: 20px;
+    letter-spacing: 4px;
+    padding: 15px;
     margin-top: 40px;
     margin-bottom: 50px;
     border-radius: 20px;
     background-color: transparent;
-    color: black;
+    color: #ffffe3;
     border-width: 1px;
-    border-color: black;
+    border-color: #ffffe3;
 
     &:hover {
-      background-color: #1b1b1b;
-      color: #ffffe3;
-      transition: background-color 0.2s ease-in;
+      color: black;
+      background-color: #ffffe3;
     }
 
     @media (max-width: 1336px) {

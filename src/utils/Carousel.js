@@ -61,7 +61,7 @@ const Item = styled(motion.div)`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 1px solid #ffffe3;
+    border: 1px solid transparent;
     border-radius: 20px;
     pointer-events: none;
   }
