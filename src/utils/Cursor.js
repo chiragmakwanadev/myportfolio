@@ -1,12 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const Cursor = () => {
+const Cursor = ({ children }) => {
   const [mousePos, setMousePos] = useState({
     x: 0,
     y: 0,
   });
+
+  const [cursorVariant, setCursorVariant] = useState("default");
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -24,25 +26,34 @@ const Cursor = () => {
 
   const variants = {
     default: {
-      x: mousePos.x - 16,
-      y: mousePos.y - 16,
+      x: mousePos.x,
+      y: mousePos.y,
+      mixBlendMode: "difference",
+    },
+    text: {
+      height: 100,
+      width: 100,
+      x: mousePos.x,
+      y: mousePos.y,
+      mixBlendMode: "difference",
     },
   };
 
-  // const textEnter = () => setCursorVariant("text");
-  // const textLeave = () => setCursorVariant("default");
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
 
   return (
     <>
-      <div>
+      <div onMouseEnter={textEnter} onMouseLeave={textLeave}>
+        {children}
         <CurCursor
           variants={variants}
-          animate="default"
+          animate={cursorVariant}
           transition={{
-            type: "spring",
-            damping: 30,
-            stiffness: 500,
-            restDelta: 0.001,
+            type: "tween",
+            damping: 200,
+            stiffness: 800,
+            restDelta: 0.5,
           }}
         ></CurCursor>
       </div>
@@ -53,12 +64,13 @@ const Cursor = () => {
 export default Cursor;
 
 const CurCursor = styled(motion.div)`
-  height: 32px;
-  width: 32px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
   background-color: #ffffe3;
+  pointer-events: auto;
+  z-index: 9999;
 `;

@@ -7,12 +7,13 @@ import Cursor from "../../utils/Cursor";
 const Layout = ({ children }) => {
   return (
     <>
-      {/* <Cursor /> */}
-      <ScrollToTop>
-        <Header />
-        {children}
-        <Footer />
-      </ScrollToTop>
+      <Cursor>
+        <ScrollToTop>
+          <Header />
+          {children}
+          <Footer />
+        </ScrollToTop>
+      </Cursor>
     </>
   );
 };
